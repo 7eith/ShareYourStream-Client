@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import Path from "./paths";
 
@@ -9,40 +10,40 @@ import DashboardPage from "@/pages/dashboard";
 import DashboardHomePage from "@/pages/dashboard/DashboardHomePage";
 import ProfilePage from "@/pages/dashboard/profile";
 
-
 import ErrorPage from "@/pages/errors";
 
-const FormatPageTitle = (_key: string) => {
+const TitleObserver = () => {
 
-    if (_key === "/app")
-        return "Dashboard";
-    if (_key === "/app/profile")
-        return "Profile"
-    return "undefined key"
+    const { t } = useTranslation('paths');
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        if (pathname !== "/")
+            document.title = `ShareYourStream - ${t(pathname)}`;
+        else
+            document.title = "Share Your Stream"
+    })
+
+    return null;
 }
 
 const Router = () => {
-
-    const location = useLocation();
-
-    useEffect(() => {
-        console.log(location)
-        console.log(FormatPageTitle(location.pathname))
-        document.title = `ShareYourStream - ${FormatPageTitle(location.pathname)}`
-    }, [location])
-    
-
     return (
-        <Routes>
-            <Route index path={Path.Home.Root} element={<HomePage />} />
-            <Route path={Path.Dashboard.Root} element={<DashboardPage />} >
-                <Route index element={<DashboardHomePage />} />
+        <>
+            <TitleObserver />
 
-                <Route path={Path.Dashboard.Profile.Root} element={<ProfilePage />} />
-            </Route>
+            <Routes>
+                <Route index path={Path.Home.Root} element={<HomePage />} />
+                <Route path={Path.Dashboard.Root} element={<DashboardPage />} >
+                    <Route index element={<DashboardHomePage />} />
 
-            <Route path="*" element={<ErrorPage />} />
-        </Routes>
+                    <Route path={Path.Dashboard.Profile.Root} element={<ProfilePage />} />
+                </Route>
+
+                <Route path="*" element={<ErrorPage />} />
+                
+            </Routes>
+        </>
     );
 };
 
