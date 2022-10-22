@@ -1,25 +1,11 @@
-import React from 'react';
-import TestComponent from '@/components/TestComponent';
+import Routes from "@/routes";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-          <TestComponent />
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+	return (
+		<div className="app">
+			<Routes />
+		</div>
+	);
 }
 
 export default App;
