@@ -27,7 +27,7 @@ const HomePage = () => {
             onMouseMove={handleMouseMovement}
             onClick={handleMouseLeave} 
         >
-            <img className="backgroundImg" />
+            <img className="backgroundImg" alt="" />
             <div className="title">
                 <h1>Share Your Stream</h1>
                 <p>An enhancer for Spotify & YouTube</p>
