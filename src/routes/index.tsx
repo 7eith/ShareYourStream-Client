@@ -1,8 +1,10 @@
 import { useEffect } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, Navigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import Path from "./paths";
+
+import ErrorPage from "@/pages/errors";
 
 import HomePage from "@/pages/home";
 
@@ -10,7 +12,10 @@ import DashboardPage from "@/pages/dashboard";
 import DashboardHomePage from "@/pages/dashboard/DashboardHomePage";
 import ProfilePage from "@/pages/dashboard/profile";
 
-import ErrorPage from "@/pages/errors";
+
+import AuthentificationLayout from "@/pages/auth";
+import SignInPage from "@/pages/auth/SignInPage";
+import SignUpPage from "@/pages/auth/SignUpPage";
 
 const TitleObserver = () => {
 
@@ -34,6 +39,14 @@ const Router = () => {
 
             <Routes>
                 <Route index path={Path.Home.Root} element={<HomePage />} />
+
+                <Route path={Path.Auth.Root} element={<AuthentificationLayout />} >
+                    <Route index element={<Navigate to="signIn"/>}/>
+
+                    <Route path={Path.Auth.SignIn} element={<SignInPage />} />
+                    <Route path={Path.Auth.SignUp} element={<SignUpPage />} />
+                </Route>
+                
                 <Route path={Path.Dashboard.Root} element={<DashboardPage />} >
                     <Route index element={<DashboardHomePage />} />
 

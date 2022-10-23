@@ -1,7 +1,21 @@
 @import 'utilities/reset';
-
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;700&family=Poppins:wght@100;300;400&display=swap');
 
+@import 'utilities/darkMode';
 
+body {
+    font-family: 'Inter';
+    color: var(--textColor);
+}
+
+.app {
+    background: var(--bgColor);
+    display: flex;
+    min-height: 100vh;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+@import 'layouts/auth';
 
 @import 'pages/landingPage';
