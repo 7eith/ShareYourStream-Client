@@ -1,3 +1,6 @@
+/// <reference types="react-scripts" />
+
+
 type AuthState = {
     loggedIn: boolean,
     accessToken: string | null;
