@@ -1,4 +1,103 @@
 .authLayout {
 
+    display: flex;
+    flex: 1;
     
+    .authPage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        padding: 35px;
+
+
+        .header {
+            margin-left: auto;
+            color: var(--greyTextColor);
+            
+            a {
+                color: var(--primaryTextColor);
+                text-decoration: none;
+            }
+        }
+
+        .authForm {
+
+            .authTitle {
+
+                font-family: "Inter";
+                padding: 20px 0px;
+                
+                .title {
+                    font-size: 34px;
+                    color: var(--textColor);
+                    font-weight: 600;
+                    margin-bottom: 10px;
+                }
+            
+                .subTitle {
+                    font-size: 13px;
+                    color: var(--greyTextColor);
+
+                }
+            }
+
+            .inputContainer {
+                
+                margin-bottom: 25px;
+
+                // TODO: chrome autofill
+                input {
+                    background-color: var(--inputBgColor);
+                    border-color: var(--inputBgColor);
+                    border: 1px solid var(--inputBgColor);
+                    color: var(--lightGreyTextColor);
+
+                    width: 100%;
+                    padding: 14px 1rem;
+                    font-size: 14px;
+                    font-family: "Inter";
+                    font-weight: 500;
+                    line-height: 1.5;
+                    appearance: none;
+                    border-radius: 0.475rem;
+
+                    transition: color 0.2s ease;
+                    
+                    &:focus, &:-webkit-autofill,
+                    &:-webkit-autofill:hover, 
+                    &:-webkit-autofill:focus {
+                        background-color: var(--focusInputBgColor);
+                        border-color: var(--focusInputBgColor);
+                        color: var(--lightGreyTextColor);
+                        box-shadow: none;
+                        outline: none;
+                    }
+
+                    &::placeholder {
+                        color: var(--placeholderTextColor);
+                    }
+                }
+            }
+        }
+    }
+
+    .illustrationAuth {
+        display: flex;
+        background-image: url("http://localhost:3000/assets/images/bg-login.png");
+        width: 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: left;
+        background-position-y: center;
+    }
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s !important;
+}
+
+@import '../pages/auth/signIn';
+@import '../pages/auth/signUp';

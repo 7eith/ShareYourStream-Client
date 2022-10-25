@@ -9,6 +9,27 @@ $themes: (
         darkTheme: white,
         lightTheme: $darkBgColor,
     ),
+    primaryTextColor: (
+        darkTheme: $primaryTextColor,
+        lightTheme: $primaryTextColor
+    ),
+    lightGreyTextColor: (
+        darkTheme: #b1b1c2
+    ),
+    greyTextColor: (
+        darkTheme: $primaryGrayDarkColor,
+        lightTheme: $primaryGrayDarkColor
+    ),
+    inputBgColor: (
+        darkTheme: #1b1b29,
+        lightTheme: red
+    ),
+    focusInputBgColor: (
+        darkTheme: #1f1f2f,
+    ),
+    placeholderTextColor: (
+        darkTheme: #565674
+    )
 );
 
 @mixin styles($mode) {

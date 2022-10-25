@@ -8,7 +8,7 @@ const App = () => {
 
 	return (
 		<div className={`app ${theme}`}>
-			<ThemeSwitcherButton />
+			{/* <ThemeSwitcherButton /> */}
 			<Routes />
 		</div>
 	);
