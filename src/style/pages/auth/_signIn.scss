@@ -14,15 +14,15 @@
 
         a {
             text-decoration: none;
-            color: #888cc9;
+            color: var(--linkTextColor);
 
             &:hover {
-                color: #9d9fc4;
+                color: var(--linkHoverTextColor);
             }
         }
 
         .submitBtn {
-            background-color: #343760;
+            background-color: var(--buttonBgColor);
             padding: 16px 40px;
             border-radius: 7px;
             cursor: pointer;
@@ -30,8 +30,7 @@
             transition: ease 0.5s;
 
             &:hover { 
-                background-color: #888cc9;
-                // color: #343760;
+                background-color: var(--buttonHoverBgColor);
                 transition: ease 0.5s;
             }
         }

@@ -17,11 +17,11 @@
             color: white;
             
             a {
-                color: #888cc9;
+                color: var(--linkTextColor);
                 text-decoration: none;
 
                 &:hover {
-                    color: #9d9fc4;
+                    color: var(--linkHoverTextColor);
                 }
             }
         }
@@ -116,7 +116,7 @@
                     width: 32px;
                     height: 32px;
 
-                    background-color: #343760;
+                    background-color: var(--buttonBgColor);
                     padding: 11px;
                     border-radius: 15px;
 
@@ -126,16 +126,16 @@
                     transition: 0.5s ease;
 
                     &:hover {
-                        background-color: #9d9fc4;
+                        background-color: var(--buttonHoverBgColor);
 
                         svg > path {
-                            fill: #343760;
+                            fill: var(--svgHoverColor);
                         }
                     }
 
                     svg {
                         path {
-                            fill: #c3c5d4;
+                            fill: var(--svgColor);
                         }
                     }
                 }

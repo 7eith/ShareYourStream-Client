@@ -2,7 +2,7 @@
 
 $themes: (
     bgColor: (
-        darkTheme: $darkBgColor,
+        darkTheme: $darkBlue300,
         lightTheme: white,
     ),
     textColor: (
@@ -29,6 +29,25 @@ $themes: (
     ),
     placeholderTextColor: (
         darkTheme: #565674
+    ),
+
+    linkTextColor: (
+        darkTheme: $lightGrey200,
+    ),
+    linkHoverTextColor: (
+        darkTheme: $lightGrey100
+    ),
+    buttonBgColor: (
+        darkTheme: $darkBlue500
+    ),
+    buttonHoverBgColor: (
+        darkTheme: $darkGrey400
+    ),
+    svgColor: (
+        darkTheme: $darkGrey200
+    ),
+    svgHoverColor: (
+        darkTheme: $darkBlue500
     )
 );
 
