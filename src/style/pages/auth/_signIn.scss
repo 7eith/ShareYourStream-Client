@@ -5,13 +5,35 @@
     flex-direction: column;
     
     width: 100%;
-    max-width: 450px;
+    max-width: 485px;
 
-    .title {
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-    }
+        a {
+            text-decoration: none;
+            color: #888cc9;
 
-    .content {
+            &:hover {
+                color: #9d9fc4;
+            }
+        }
 
+        .submitBtn {
+            background-color: #343760;
+            padding: 16px 40px;
+            border-radius: 7px;
+            cursor: pointer;
+
+            transition: ease 0.5s;
+
+            &:hover { 
+                background-color: #888cc9;
+                // color: #343760;
+                transition: ease 0.5s;
+            }
+        }
     }
 }

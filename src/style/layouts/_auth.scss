@@ -14,11 +14,15 @@
 
         .header {
             margin-left: auto;
-            color: var(--greyTextColor);
+            color: white;
             
             a {
-                color: var(--primaryTextColor);
+                color: #888cc9;
                 text-decoration: none;
+
+                &:hover {
+                    color: #9d9fc4;
+                }
             }
         }
 
@@ -54,6 +58,8 @@
                     border: 1px solid var(--inputBgColor);
                     color: var(--lightGreyTextColor);
 
+                    box-sizing: border-box;
+
                     width: 100%;
                     padding: 14px 1rem;
                     font-size: 14px;
@@ -77,6 +83,60 @@
 
                     &::placeholder {
                         color: var(--placeholderTextColor);
+                    }
+                }
+            }
+        }
+
+        .oauthContainer {
+
+            padding-top: 10px;
+
+            .oauthTitle {
+
+                text-align: center;
+                margin: auto;
+                font-family: "Poppins";
+                color: #474761;
+                padding: 10px;
+                font-size: 14px;
+                letter-spacing: 0.5px;
+
+            } 
+
+            .oauthProviders {
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                padding-top: 10px;
+
+                .provider {
+                    width: 32px;
+                    height: 32px;
+
+                    background-color: #343760;
+                    padding: 11px;
+                    border-radius: 15px;
+
+                    margin: 0px 15px;
+                    cursor: pointer;
+
+                    transition: 0.5s ease;
+
+                    &:hover {
+                        background-color: #9d9fc4;
+
+                        svg > path {
+                            fill: #343760;
+                        }
+                    }
+
+                    svg {
+                        path {
+                            fill: #c3c5d4;
+                        }
                     }
                 }
             }
