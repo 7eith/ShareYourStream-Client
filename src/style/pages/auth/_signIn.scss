@@ -36,3 +36,16 @@
         }
     }
 }
+
+
+@media screen and (max-width: 362px) {
+
+    .signInPage {
+        .footer {
+            .submitBtn {
+                padding: 12px !important;
+            }
+        }
+    }
+
+}
