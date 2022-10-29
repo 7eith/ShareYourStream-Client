@@ -4,9 +4,17 @@ import { NavLink } from "react-router-dom";
 import { ReactComponent as Spotify } from "@/assets/svgs/spotify.svg";
 import { ReactComponent as Google } from "@/assets/svgs/google.svg";
 import { ReactComponent as Discord } from "@/assets/svgs/discord.svg";
-
+import { useState } from "react";
 
 const SignInPage = () => {
+
+    const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+
+    const submit = () => {
+        console.log(email)
+        console.log(password)
+    }
 
     return (
         <div className="signInPage">
@@ -20,19 +28,34 @@ const SignInPage = () => {
                         <div className="subTitle">Enhance your music experience using an third party Software</div>
                     </div>
                     <div className="inputContainer">
-                        <input type="text"  placeholder="Email" />
+                        <input 
+                            type="text" 
+                            placeholder="Email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                        />
                     </div>
                     <div className="inputContainer">
-                        <input type="password" placeholder="Password" />
+                        <input 
+                            type="password" 
+                            placeholder="Password"
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
+                        />
                     </div>
                     <div className="footer">
                         <NavLink 
                             to={Path.Auth.PasswordForgot.Root}
-                            state={{ filledEmail: "seith@synezia.com" }}
+                            state={{ filledEmail: email }}
                         >
                             Forgot Password ?
                         </NavLink>
-                        <div className="submitBtn">Sign In</div>
+                        <div 
+                            className="submitBtn"
+                            onClick={submit}
+                        >
+                            Sign In
+                        </div>
                     </div>
                 </form>
                 <div className="oauthContainer">
