@@ -26,7 +26,12 @@ const SignInPage = () => {
                         <input type="password" placeholder="Password" />
                     </div>
                     <div className="footer">
-                        <NavLink to={Path.Auth.SignUp}>Forgot Password ?</NavLink>
+                        <NavLink 
+                            to={Path.Auth.PasswordForgot.Root}
+                            state={{ filledEmail: "seith@synezia.com" }}
+                        >
+                            Forgot Password ?
+                        </NavLink>
                         <div className="submitBtn">Sign In</div>
                     </div>
                 </form>

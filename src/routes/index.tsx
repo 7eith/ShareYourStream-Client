@@ -17,6 +17,10 @@ import AuthentificationLayout from "@/pages/auth";
 import SignInPage from "@/pages/auth/SignInPage";
 import SignUpPage from "@/pages/auth/SignUpPage";
 
+import PasswordForgotLayout from "@/pages/auth/password";
+import PasswordForgotRequestPage from "@/pages/auth/password/PasswordForgotRequestPage";
+import PasswordForgotChangePage from "@/pages/auth/password/PasswordForgotChangePage";
+
 const TitleObserver = () => {
 
     const { t } = useTranslation('paths');
@@ -45,6 +49,11 @@ const Router = () => {
 
                     <Route path={Path.Auth.SignIn} element={<SignInPage />} />
                     <Route path={Path.Auth.SignUp} element={<SignUpPage />} />
+
+                    <Route path={Path.Auth.PasswordForgot.Root} element={<PasswordForgotLayout />} >
+                        <Route index element={<PasswordForgotRequestPage />} />
+                        <Route path={Path.Auth.PasswordForgot.Change} element={<PasswordForgotChangePage />} />
+                    </Route>
                 </Route>
                 
                 <Route path={Path.Dashboard.Root} element={<DashboardPage />} >

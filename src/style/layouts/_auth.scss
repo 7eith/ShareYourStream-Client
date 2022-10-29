@@ -162,6 +162,8 @@ input:-webkit-autofill:focus {
 @import '../pages/auth/signIn';
 @import '../pages/auth/signUp';
 
+@import '../pages/auth/password';
+
 @media screen and (max-width: 1000px) {
 
     .authLayout > .illustrationAuth { display: none; }

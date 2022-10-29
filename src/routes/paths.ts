@@ -6,7 +6,12 @@ const Path = {
     Auth: {
         Root: "/auth",
         SignIn: "/auth/signIn",
-        SignUp: "/auth/signUp"
+        SignUp: "/auth/signUp",
+
+        PasswordForgot: {
+            Root: "/auth/passwordForgot",
+            Change: "/auth/passwordForgot/change"
+        }
     },
 
     Dashboard: { 

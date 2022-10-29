@@ -1,0 +1,42 @@
+.passwordForgotPage {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: space-between;
+    flex-direction: column;
+    
+    width: 100%;
+    max-width: 485px;
+
+    .footerPassword {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .submitBtn {
+            background-color: var(--buttonBgColor);
+            padding: 16px 40px;
+            border-radius: 7px;
+            cursor: pointer;
+
+            transition: ease 0.5s;
+
+            &:hover { 
+                background-color: var(--buttonHoverBgColor);
+                transition: ease 0.5s;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 362px) {
+
+    .passwordForgotPage {
+        .footerPassword {
+            .submitBtn {
+                padding: 12px !important;
+            }
+        }
+    }
+
+}

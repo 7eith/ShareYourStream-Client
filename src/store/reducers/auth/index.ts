@@ -12,7 +12,6 @@ export default function authReducer(state: AuthState = initialState, action: any
 
     switch (type) {
 
-
         default:
             return state;
     }

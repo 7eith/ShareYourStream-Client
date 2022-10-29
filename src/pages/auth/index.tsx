@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import BackgroundAuth from "@/assets/bg-login.png";
 
 const IllustrationAuth = () => {
     return (
@@ -14,7 +13,6 @@ const AuthentificationLayout = () => {
             <div className="authPage">
                 <Outlet />
             </div>
-            {/* <img className="illustrationAuth" src={BackgroundAuth} /> */}
             <IllustrationAuth />
         </div>
     )
