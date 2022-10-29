@@ -1,3 +1,23 @@
+import { useSecretCode } from "@/hooks/useSecretCode";
+import Path from "@/routes/paths";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+
+const CheatCode__SignIn = () => {
+
+    const code = useSecretCode(["ArrowUp", "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", ]);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (code) {
+            navigate(Path.Auth.SignIn)
+        }
+    }, [code])
+    return null;
+
+}
+
 const HomePage = () => {
 
     const handleMouseMovement = (e: any) => {
@@ -32,6 +52,7 @@ const HomePage = () => {
                 <h1>Share Your Stream</h1>
                 <p>An enhancer for Spotify & YouTube</p>
             </div>
+            <CheatCode__SignIn />
         </div>
     )
 }
