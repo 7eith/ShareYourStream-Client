@@ -36,6 +36,7 @@ const PasswordForgotRequestPage = () => {
                             placeholder="Email" 
                             value={email}
                             onChange={e => setEmail(e.target.value)}
+                            autoComplete="email"
                         />
                     </div>
                     <div className="footerPassword">
