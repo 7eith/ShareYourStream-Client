@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const PasswordForgotRequestPage = () => {
 
     const location = useLocation();
-    const [email, setEmail] = useState("");
+    const [ email, setEmail ] = useState("");
 
     useEffect(() => {
         if (location.state && location.state.filledEmail) {
@@ -39,7 +39,12 @@ const PasswordForgotRequestPage = () => {
                         />
                     </div>
                     <div className="footerPassword">
-                        <div className="submitBtn" onClick={submit} >Submit</div>
+                        <div 
+                            className="submitBtn" 
+                            onClick={submit} 
+                        >
+                            Submit
+                        </div>
                     </div>
                 </form>
             </div>
