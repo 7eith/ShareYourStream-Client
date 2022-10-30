@@ -5,13 +5,47 @@
     flex-direction: column;
     
     width: 100%;
-    max-width: 450px;
+    max-width: 485px;
 
-    .title {
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
+        a {
+            text-decoration: none;
+            color: var(--linkTextColor);
+
+            &:hover {
+                color: var(--linkHoverTextColor);
+            }
+        }
+
+        .submitBtn {
+            background-color: var(--buttonBgColor);
+            padding: 16px 40px;
+            border-radius: 7px;
+            cursor: pointer;
+
+            transition: ease 0.5s;
+
+            &:hover { 
+                background-color: var(--buttonHoverBgColor);
+                transition: ease 0.5s;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 362px) {
+
+    .signInPage {
+        .footer {
+            .submitBtn {
+                padding: 12px !important;
+            }
+        }
     }
 
-    .content {
-
-    }
 }
