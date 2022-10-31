@@ -3,7 +3,7 @@
     display: flex;
     flex: 1;
     
-    .authPage {
+    .authPageContainer {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -11,21 +11,59 @@
         flex: 1;
         padding: 50px;
 
-
-        .header {
-            margin-left: auto;
-            color: white;
+        .authPageContent {
+            display: flex;
+            flex: 1 0 auto;
+            justify-content: space-between;
+            flex-direction: column;
             
-            a {
-                color: var(--linkTextColor);
-                text-decoration: none;
+            width: 100%;
+            max-width: 485px;
 
-                &:hover {
-                    color: var(--linkHoverTextColor);
+            .header {
+                margin-left: auto;
+                color: white;
+                
+                a {
+                    color: var(--linkTextColor);
+                    text-decoration: none;
+    
+                    &:hover {
+                        color: var(--linkHoverTextColor);
+                    }
+                }
+            }
+
+            .footer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+        
+                a {
+                    text-decoration: none;
+                    color: var(--linkTextColor);
+        
+                    &:hover {
+                        color: var(--linkHoverTextColor);
+                    }
+                }
+        
+                .submitBtn {
+                    background-color: var(--buttonBgColor);
+                    padding: 16px 40px;
+                    border-radius: 7px;
+                    cursor: pointer;
+        
+                    transition: ease 0.5s;
+        
+                    &:hover { 
+                        background-color: var(--buttonHoverBgColor);
+                        transition: ease 0.5s;
+                    }
                 }
             }
         }
-
+        
         .authForm {
 
             .authTitle {
@@ -91,6 +129,26 @@
                     margin-left: 5px;
                     margin-top: 8px;
                     color: #f1416c;
+                }
+            }
+
+            .submitContainer {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+        
+                .submitBtn {
+                    background-color: var(--buttonBgColor);
+                    padding: 16px 40px;
+                    border-radius: 7px;
+                    cursor: pointer;
+        
+                    transition: ease 0.5s;
+        
+                    &:hover { 
+                        background-color: var(--buttonHoverBgColor);
+                        transition: ease 0.5s;
+                    }
                 }
             }
         }
@@ -166,13 +224,16 @@ input:-webkit-autofill:focus {
   transition: background-color 600000s 0s, color 600000s 0s !important;
 }
 
-@import '../pages/auth/signIn';
-@import '../pages/auth/signUp';
-
-@import '../pages/auth/password';
-
 @media screen and (max-width: 1000px) {
 
     .authLayout > .illustrationAuth { display: none; }
+
+}
+
+@media screen and (max-width: 380px) {
+
+    .authPageContent {
+        .submitBtn { padding: 12px !important; }
+    }
 
 }

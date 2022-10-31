@@ -20,36 +20,30 @@ const PasswordForgotRequestPage = () => {
     }
 
     return (
-        <div className="passwordForgotPage">
-            <div className="header">
-                Recovered your password ? <NavLink to={Path.Auth.SignIn}>Sign In</NavLink>
-            </div>
-            <div className="content">
-                <form className="authForm">
-                    <div className="authTitle">
-                        <div className="title">Password Forgot</div>
-                        <div className="subTitle">Enter your email to reset your password.</div>
+        <div className="content">
+            <form className="authForm">
+                <div className="authTitle">
+                    <div className="title">Password Forgot</div>
+                    <div className="subTitle">Enter your email to reset your password.</div>
+                </div>
+                <div className="inputContainer">
+                    <input 
+                        type="text" 
+                        placeholder="Email" 
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        autoComplete="email"
+                    />
+                </div>
+                <div className="submitContainer">
+                    <div 
+                        className="submitBtn" 
+                        onClick={submit} 
+                    >
+                        Submit
                     </div>
-                    <div className="inputContainer">
-                        <input 
-                            type="text" 
-                            placeholder="Email" 
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                            autoComplete="email"
-                        />
-                    </div>
-                    <div className="footerPassword">
-                        <div 
-                            className="submitBtn" 
-                            onClick={submit} 
-                        >
-                            Submit
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div className="footer">English</div>
+                </div>
+            </form>
         </div>
     )
 }

@@ -27,77 +27,71 @@ const SignUpPage = () => {
     }
 
     return (
-        <div className="signUpPage">
-            <div className="header">
-                You are already register? <NavLink to={Path.Auth.SignIn}>Sign In</NavLink>
-            </div>
-            <div className="content">
-                <form className="authForm">
-                    <div className="authTitle">
-                        <div className="title">Sign Up</div>
-                        <div className="subTitle">Enhance your music experience using an third party Software</div>
-                    </div>
-                    <div className="inputContainer">
-                        <input 
-                            type="text" 
-                            placeholder="Email" 
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                            autoComplete="email"
-                        />
-                        { 
-                            !isValidEmail() ? (
-                                <InputError 
-                                    message="The value is not a valid email address" 
-                                />
-                            ) : null 
-                        }
-                    </div>
-                    <div className="inputContainer">
-                        <input 
-                            type="password" 
-                            placeholder="Password"
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            autoComplete="new-password"
-                        />
-                    </div>
-                    <div className="inputContainer">
-                        <input 
-                            type="password" 
-                            placeholder="Confirm Password"
-                            value={passwordConfirm}
-                            onChange={e => setPasswordConfirm(e.target.value)}
-                            autoComplete="off"
-                        />
-                        { 
-                            password !== passwordConfirm ? (
-                                <InputError 
-                                    message="The password and its confirm are not the same" 
-                                />
-                            ) : null 
-                        }
-                    </div>
-                    <div className="footer">
-                        <NavLink to={Path.Home.Root}>Back to Home</NavLink>
-                        <div 
-                            className="submitBtn" 
-                            onClick={submit} 
-                        >
-                            Submit
-                        </div>
-                    </div>
-                </form>
-                <div className="oauthContainer">
-                    <div className="oauthTitle">Or sign up with</div>
-                    <div className="oauthProviders">
-                        <div className="provider google"><Google /></div>
-                        <div className="provider spotify"><Spotify /></div>
-                        <div className="provider discord"><Discord /></div>
+        <div className="content">
+            <form className="authForm">
+                <div className="authTitle">
+                    <div className="title">Sign Up</div>
+                    <div className="subTitle">Enhance your music experience using an third party Software</div>
+                </div>
+                <div className="inputContainer">
+                    <input 
+                        type="text" 
+                        placeholder="Email" 
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        autoComplete="email"
+                    />
+                    { 
+                        !isValidEmail() ? (
+                            <InputError 
+                                message="The value is not a valid email address" 
+                            />
+                        ) : null 
+                    }
+                </div>
+                <div className="inputContainer">
+                    <input 
+                        type="password" 
+                        placeholder="Password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        autoComplete="new-password"
+                    />
+                </div>
+                <div className="inputContainer">
+                    <input 
+                        type="password" 
+                        placeholder="Confirm Password"
+                        value={passwordConfirm}
+                        onChange={e => setPasswordConfirm(e.target.value)}
+                        autoComplete="off"
+                    />
+                    { 
+                        password !== passwordConfirm ? (
+                            <InputError 
+                                message="The password and its confirm are not the same" 
+                            />
+                        ) : null 
+                    }
+                </div>
+                <div className="footer">
+                    <NavLink to={Path.Home.Root}>Back to Home</NavLink>
+                    <div 
+                        className="submitBtn" 
+                        onClick={submit} 
+                    >
+                        Submit
                     </div>
                 </div>
+            </form>
+            <div className="oauthContainer">
+                <div className="oauthTitle">Or sign up with</div>
+                <div className="oauthProviders">
+                    <div className="provider google"><Google /></div>
+                    <div className="provider spotify"><Spotify /></div>
+                    <div className="provider discord"><Discord /></div>
+                </div>
             </div>
-            <div className="footer">English</div>
         </div>
     )
 }

@@ -10,7 +10,7 @@ const Path = {
 
         PasswordForgot: {
             Root: "/auth/passwordForgot",
-            Change: "/auth/passwordForgot/change"
+            Change: "/auth/passwordForgot/:token"
         }
     },
 

@@ -17,59 +17,53 @@ const SignInPage = () => {
     }
 
     return (
-        <div className="signInPage">
-            <div className="header">
-                Not Member ? <NavLink to={Path.Auth.SignUp}>Sign Up</NavLink>
-            </div>
-            <div className="content">
-                <form className="authForm">
-                    <div className="authTitle">
-                        <div className="title">Sign In</div>
-                        <div className="subTitle">Enhance your music experience using an third party Software</div>
-                    </div>
-                    <div className="inputContainer">
-                        <input 
-                            type="text" 
-                            placeholder="Email"
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                            autoComplete="email"
-                        />
-                    </div>
-                    <div className="inputContainer">
-                        <input 
-                            type="password" 
-                            placeholder="Password"
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            autoComplete="current-password"
-                        />
-                    </div>
-                    <div className="footer">
-                        <NavLink 
-                            to={Path.Auth.PasswordForgot.Root}
-                            state={{ filledEmail: email }}
-                        >
-                            Forgot Password ?
-                        </NavLink>
-                        <div 
-                            className="submitBtn"
-                            onClick={submit}
-                        >
-                            Sign In
-                        </div>
-                    </div>
-                </form>
-                <div className="oauthContainer">
-                    <div className="oauthTitle">Or log in with</div>
-                    <div className="oauthProviders">
-                        <div className="provider google"><Google /></div>
-                        <div className="provider spotify"><Spotify /></div>
-                        <div className="provider discord"><Discord /></div>
+        <div className="content">
+            <form className="authForm">
+                <div className="authTitle">
+                    <div className="title">Sign In</div>
+                    <div className="subTitle">Enhance your music experience using an third party Software</div>
+                </div>
+                <div className="inputContainer">
+                    <input 
+                        type="text" 
+                        placeholder="Email"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        autoComplete="email"
+                    />
+                </div>
+                <div className="inputContainer">
+                    <input 
+                        type="password" 
+                        placeholder="Password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        autoComplete="current-password"
+                    />
+                </div>
+                <div className="footer">
+                    <NavLink 
+                        to={Path.Auth.PasswordForgot.Root}
+                        state={{ filledEmail: email }}
+                    >
+                        Forgot Password ?
+                    </NavLink>
+                    <div 
+                        className="submitBtn"
+                        onClick={submit}
+                    >
+                        Sign In
                     </div>
                 </div>
+            </form>
+            <div className="oauthContainer">
+                <div className="oauthTitle">Or log in with</div>
+                <div className="oauthProviders">
+                    <div className="provider google"><Google /></div>
+                    <div className="provider spotify"><Spotify /></div>
+                    <div className="provider discord"><Discord /></div>
+                </div>
             </div>
-            <div className="footer">English</div>
         </div>
     )
 }
