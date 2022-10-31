@@ -1,7 +1,8 @@
 import { Outlet, NavLink} from "react-router-dom";
-// import { NavLink } from "react-router-dom";
-
 import Path from "@/routes/paths";
+
+import AuthentificationFooterComponent from "@/components/auth/AuthentificationFooterComponent";
+import AuthentificationHeaderComponent from "@/components/auth/AuthentificationHeaderComponent";
 
 const IllustrationAuth = () => {
     return (
@@ -9,17 +10,16 @@ const IllustrationAuth = () => {
     )
 }
 
+
 const AuthentificationLayout = () => {
 
     return (
         <div className="authLayout">
             <div className="authPageContainer">
                 <div className="authPageContent">
-                    <div className="header">
-                        Not Member ? <NavLink to={Path.Auth.SignUp}>Sign Up</NavLink>
-                    </div>
+                    <AuthentificationHeaderComponent />
                     <Outlet />
-                    <div className="footer">English</div>
+                    <AuthentificationFooterComponent />
                 </div>
             </div>
             <IllustrationAuth />
