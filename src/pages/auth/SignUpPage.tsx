@@ -2,7 +2,7 @@ import Path from "@/routes/paths";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import OAuthProvidersComponent from "@/components/auth/OAuthProvidersComponent";
+import OAuthProvidersComponent from "@/components/auth/oauth/OAuthProvidersComponent";
 
 const InputError = ({ message } : { message: string }) => {
     return (

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 
 import { useState } from "react";
-import OAuthProvidersComponent from "@/components/auth/OAuthProvidersComponent";
+import OAuthProvidersComponent from "@/components/auth/oauth/OAuthProvidersComponent";
 
 const SignInPage = () => {
 
