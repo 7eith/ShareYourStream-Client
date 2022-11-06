@@ -33,21 +33,26 @@ $themes: (
 
     linkTextColor: (
         darkTheme: $lightGrey200,
+        lightTheme: $lightGrey200,
     ),
     linkHoverTextColor: (
-        darkTheme: $lightGrey100
+        darkTheme: $lightGrey100,
+        lightTheme: $lightGrey100,
     ),
     buttonBgColor: (
-        darkTheme: $darkBlue500
+        darkTheme: $darkBlue500,
+        lightTheme: $darkBlue500
     ),
     buttonHoverBgColor: (
         darkTheme: $darkGrey400
     ),
     svgColor: (
-        darkTheme: $darkGrey200
+        darkTheme: $darkGrey200,
+        lightTheme: $lightGrey200
     ),
     svgHoverColor: (
-        darkTheme: $darkBlue500
+        darkTheme: $darkBlue500,
+        lightTheme: $lightGrey200
     )
 );
 
