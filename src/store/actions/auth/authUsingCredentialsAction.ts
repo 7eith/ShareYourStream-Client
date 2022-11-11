@@ -8,18 +8,18 @@ type AuthResponse = {
     refreshToken: string;
 }
 
-export const authUsingSpotifyAction = createAsyncThunk(
+export const authUsingCredentialsAction = createAsyncThunk(
+    
+    "auth/usingCredentials",
 
-    "auth/usingSpotify",
-
-    async (_code: string, { dispatch }) => {
+    async (_email: string,  { dispatch }) => {
 
         return new Promise<string | void>(async (resolve, reject) => {
 
             try {
                 const { data } = await axios.post<AuthResponse>(
                     'http://localhost:8000/authentification/spotify',
-                    { code: _code }
+                    { code: "_code" }
                 )
         
                 dispatch({ type: AUTH_SET_TOKEN, payload: {
