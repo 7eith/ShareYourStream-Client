@@ -8,7 +8,7 @@ type AuthResponse = {
     refreshToken: string;
 }
 
-type LoginForm = {
+type LoginFormData = {
     email: string;
     password: string;
 }
@@ -17,7 +17,7 @@ export const loginUsingCredentialsAction = createAsyncThunk(
     
     "auth/loginUsingCredentials",
 
-    async (_params: LoginForm,  { dispatch }) => {
+    async (_params: LoginFormData,  { dispatch }) => {
 
         const { email, password } = _params;
 
