@@ -2,7 +2,11 @@ import Path from "@/routes/paths";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/index";
+
 import OAuthProvidersComponent from "@/components/auth/oauth/OAuthProvidersComponent";
+import { registerUsingCredentialsAction } from "@/store/actions/auth/registerUsingCredentialsAction";
 
 const InputError = ({ message } : { message: string }) => {
     return (
@@ -11,6 +15,8 @@ const InputError = ({ message } : { message: string }) => {
 }
 
 const SignUpPage = () => {
+
+    const dispatch: AppDispatch = useDispatch();
 
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
@@ -21,7 +27,16 @@ const SignUpPage = () => {
     }
 
     const submit = () => {
-
+        dispatch(registerUsingCredentialsAction({
+            email: email,
+            password: password
+        }))
+        .then((data) => {
+            console.log(data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }
 
     return (

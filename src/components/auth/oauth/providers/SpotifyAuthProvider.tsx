@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ReactComponent as Spotify } from "@/assets/svgs/spotify.svg";
+import { ReactComponent as SpotifyICO } from "@/assets/svgs/spotify.svg";
 import { AppDispatch } from "@/index";
 import { useDispatch } from "react-redux";
 import { authUsingSpotifyAction } from "@/store/actions/auth/oauth/authUsingSpotifyAction";
@@ -61,7 +61,7 @@ const SpotifyAuthProvider = () => {
 
     return (
         <div className="provider spotify" onClick={openAuthWindow}>
-            <Spotify />
+            <SpotifyICO />
         </div>
     )
 }

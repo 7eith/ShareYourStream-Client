@@ -8,18 +8,28 @@ type AuthResponse = {
     refreshToken: string;
 }
 
-export const authUsingCredentialsAction = createAsyncThunk(
-    
-    "auth/usingCredentials",
+type RegisterFormData = {
+    email: string;
+    password: string;
+}
 
-    async (_email: string,  { dispatch }) => {
+export const registerUsingCredentialsAction = createAsyncThunk(
+    
+    "auth/registerUsingCredentials",
+
+    async (_params: RegisterFormData,  { dispatch }) => {
+
+        const { email, password } = _params;
 
         return new Promise<string | void>(async (resolve, reject) => {
 
             try {
                 const { data } = await axios.post<AuthResponse>(
-                    `${process.env.REACT_APP_API_URL}/authentification/spotify`,
-                    { code: "_code" }
+                    `${process.env.REACT_APP_API_URL}/authentification/signUp`,
+                    {
+                        email: email,
+                        password: password
+                    }
                 )
         
                 dispatch({ type: AUTH_SET_TOKENS, payload: {
@@ -30,7 +40,7 @@ export const authUsingCredentialsAction = createAsyncThunk(
                 resolve();
             }
     
-            catch (error) { // TODO: notification for global instance 
+            catch (error) {
                 if (axios.isAxiosError(error)) 
                     return reject(error.response?.data.message);
 
