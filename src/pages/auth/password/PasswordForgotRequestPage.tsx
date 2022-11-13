@@ -35,10 +35,15 @@ const PasswordForgotRequestPage = () => {
                         autoComplete="email"
                     />
                 </div>
-                <div className="submitContainer">
+                <div className="footer">
+                    <NavLink 
+                        to={Path.Auth.SignIn}
+                    >
+                        Back to Sign In
+                    </NavLink>
                     <div 
-                        className="submitBtn" 
-                        onClick={submit} 
+                        className="submitBtn"
+                        onClick={submit}
                     >
                         Submit
                     </div>
