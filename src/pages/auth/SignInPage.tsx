@@ -2,17 +2,30 @@ import Path from "@/routes/paths";
 import { NavLink } from "react-router-dom";
 
 
-import { useState } from "react";
 import OAuthProvidersComponent from "@/components/auth/oauth/OAuthProvidersComponent";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/index";
+import { loginUsingCredentialsAction } from "@/store/actions/auth/loginUsingCredentialsAction";
 
 const SignInPage = () => {
+
+    const dispatch: AppDispatch = useDispatch();
 
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
 
     const submit = () => {
-        console.log(email)
-        console.log(password)
+        dispatch(loginUsingCredentialsAction({
+            email: email,
+            password: password
+        }))
+        .then((data) => {
+            console.log(data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     }
 
     return (
