@@ -3,6 +3,7 @@ import { ReactComponent as Spotify } from "@/assets/svgs/spotify.svg";
 import { AppDispatch } from "@/index";
 import { useDispatch } from "react-redux";
 import { authUsingSpotifyAction } from "@/store/actions/auth/oauth/authUsingSpotifyAction";
+import { fetchProfileAction } from "@/store/actions/user/fetchProfileAction";
 
 const SpotifyURL = "https://accounts.spotify.com/authorize?response_type=code&client_id=" + 
 		"612daca3db4447cdb94de2e117e40022" + 
@@ -46,6 +47,10 @@ const SpotifyAuthProvider = () => {
 			if (oauthCode) {
 				popUp.close();
                 dispatch(authUsingSpotifyAction(oauthCode))
+				.then(() => {
+					console.log('hello')
+					dispatch(fetchProfileAction())
+				})
 				// console.log('detected Code ' + oauthCode); 
 				setOAuthWindow(null);
 				timer && clearInterval(timer);

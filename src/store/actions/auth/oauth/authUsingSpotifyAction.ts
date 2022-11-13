@@ -1,7 +1,8 @@
 
-import { AUTH_SET_TOKEN } from "@/store/types";
-import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
+import { AUTH_SET_TOKENS } from "@/store/types";
 
 type AuthResponse = {
     token: string;
@@ -18,15 +19,15 @@ export const authUsingSpotifyAction = createAsyncThunk(
 
             try {
                 const { data } = await axios.post<AuthResponse>(
-                    'http://localhost:8000/authentification/spotify',
+                    `${process.env.REACT_APP_API_URL}/authentification/spotify`,
                     { code: _code }
                 )
         
-                dispatch({ type: AUTH_SET_TOKEN, payload: {
+                dispatch({ type: AUTH_SET_TOKENS, payload: {
                     accessToken: data.token,
                     refreshToken: data.refreshToken
                 }})
-    
+
                 resolve();
             }
     

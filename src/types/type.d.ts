@@ -1,11 +1,15 @@
 /// <reference types="react-scripts" />
 
 type AuthState = {
-  loggedIn: boolean;
   accessToken: string | null;
   refreshToken: string | null;
-  user: any;
 };
+
+type UserState = {
+  loggedIn: boolean;
+  email: string | null;
+
+}
 
 type AuthAction = {
   type: string;

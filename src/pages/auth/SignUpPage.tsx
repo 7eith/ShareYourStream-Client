@@ -73,7 +73,7 @@ const SignUpPage = () => {
                     }
                 </div>
                 <div className="footer">
-                    <NavLink to={Path.Home.Root}>Back to Home</NavLink>
+                    <NavLink to={Path.Auth.SignIn}>Back to Sign In</NavLink>
                     <div 
                         className="submitBtn" 
                         onClick={submit} 
