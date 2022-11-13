@@ -1,10 +1,9 @@
 import Path from "@/routes/paths";
 import { NavLink } from "react-router-dom";
 
-import { ReactComponent as Spotify } from "@/assets/svgs/spotify.svg";
-import { ReactComponent as Google } from "@/assets/svgs/google.svg";
-import { ReactComponent as Discord } from "@/assets/svgs/discord.svg";
+
 import { useState } from "react";
+import OAuthProvidersComponent from "@/components/auth/oauth/OAuthProvidersComponent";
 
 const SignInPage = () => {
 
@@ -56,14 +55,7 @@ const SignInPage = () => {
                     </div>
                 </div>
             </form>
-            <div className="oauthContainer">
-                <div className="oauthTitle">Or log in with</div>
-                <div className="oauthProviders">
-                    <div className="provider google"><Google /></div>
-                    <div className="provider spotify"><Spotify /></div>
-                    <div className="provider discord"><Discord /></div>
-                </div>
-            </div>
+            <OAuthProvidersComponent />
         </div>
     )
 }

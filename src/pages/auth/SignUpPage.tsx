@@ -2,9 +2,7 @@ import Path from "@/routes/paths";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import { ReactComponent as Spotify } from "@/assets/svgs/spotify.svg";
-import { ReactComponent as Google } from "@/assets/svgs/google.svg";
-import { ReactComponent as Discord } from "@/assets/svgs/discord.svg";
+import OAuthProvidersComponent from "@/components/auth/oauth/OAuthProvidersComponent";
 
 const InputError = ({ message } : { message: string }) => {
     return (
@@ -75,7 +73,7 @@ const SignUpPage = () => {
                     }
                 </div>
                 <div className="footer">
-                    <NavLink to={Path.Home.Root}>Back to Home</NavLink>
+                    <NavLink to={Path.Auth.SignIn}>Back to Sign In</NavLink>
                     <div 
                         className="submitBtn" 
                         onClick={submit} 
@@ -84,14 +82,7 @@ const SignUpPage = () => {
                     </div>
                 </div>
             </form>
-            <div className="oauthContainer">
-                <div className="oauthTitle">Or sign up with</div>
-                <div className="oauthProviders">
-                    <div className="provider google"><Google /></div>
-                    <div className="provider spotify"><Spotify /></div>
-                    <div className="provider discord"><Discord /></div>
-                </div>
-            </div>
+            <OAuthProvidersComponent />
         </div>
     )
 }

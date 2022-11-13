@@ -1,5 +1,4 @@
-import { Outlet, NavLink} from "react-router-dom";
-import Path from "@/routes/paths";
+import { Outlet } from "react-router-dom";
 
 import AuthentificationFooterComponent from "@/components/auth/AuthentificationFooterComponent";
 import AuthentificationHeaderComponent from "@/components/auth/AuthentificationHeaderComponent";
