@@ -1,6 +1,7 @@
 import { ReactComponent as Google } from "@/assets/svgs/google.svg";
 import { ReactComponent as Discord } from "@/assets/svgs/discord.svg";
 import SpotifyAuthProvider from "./providers/SpotifyAuthProvider";
+import DiscordAuthProvider from "./providers/DiscordAuthProvider";
 
 const OAuthProvidersComponent = () => {
 	return (
@@ -11,9 +12,7 @@ const OAuthProvidersComponent = () => {
 					<Google />
 				</div>
 				<SpotifyAuthProvider />
-				<div className="provider discord">
-					<Discord />
-				</div>
+				<DiscordAuthProvider />
 			</div>
 		</div>
 	);
