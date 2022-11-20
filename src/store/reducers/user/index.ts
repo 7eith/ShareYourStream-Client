@@ -3,7 +3,15 @@ import { UserState } from "@/types/type";
 
 const initialState : UserState = {
     loggedIn: false,
-    email: null
+    id: null,
+    email: null,
+    discordId: null,
+    discordAccessToken: null,
+    discordScopes: null,
+    spotifyId: null,
+    spotifyAccessToken: null,
+    spotifyScopes: null,
+    createdAt: null,
 };
 
 export default function userReducer(state: UserState = initialState, action: any) {
@@ -16,7 +24,15 @@ export default function userReducer(state: UserState = initialState, action: any
             return {
                 ...state,
                 loggedIn: true,
-                email: payload.email
+                id: payload.id,
+                email: payload?.email,
+                discordId: payload?.discordId,
+                discordAccessToken: payload?.discordAccessToken,
+                discordScopes: payload?.discordScopes,
+                spotifyId: payload?.spotifyId,
+                spotifyAccessToken: payload?.spotifyAccessToken,
+                spotifyScopes: payload?.spotifyScopes,
+                createdAt: payload.createdAt
             }
 
         default:

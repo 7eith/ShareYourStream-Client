@@ -1,18 +1,16 @@
 
+import { USER_SET_PROFILE } from "@/store/types";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchProfileAction = createAsyncThunk<Promise<void>, void, { state: { auth: { accessToken: string }}}>
+export const fetchProfileAction = createAsyncThunk<Promise<void>, void, { state: { auth: { accessToken: string, refreshToken: string }}}>
     (
     
     "user/fetchProfile",
 
     async (_: void, { dispatch, getState }) : Promise<any> => {
 
-        const { accessToken } = getState().auth;
-        console.log(accessToken)
-        // dispatch({ type: AUTH_SET_USER, payload: { user: { email: "me@seith.com"}}})
-        // return Promise.resolve(true);
+        const { accessToken, refreshToken } = getState().auth;
 
         return new Promise<void>(async (resolve, reject) => {
 
@@ -22,12 +20,12 @@ export const fetchProfileAction = createAsyncThunk<Promise<void>, void, { state:
                     { headers: { "Authorization": `Bearer ${accessToken}` }}
                 )
 
-                console.log(data)
-        
-                // dispatch({ type: AUTH_SET_TOKEN, payload: {
-                //     accessToken: data.token,
-                //     refreshToken: data.refreshToken
-                // }})
+                dispatch({ type: USER_SET_PROFILE, payload: data })
+
+                if (!localStorage.getItem('token')) {
+                    localStorage.setItem('token', accessToken);
+                    localStorage.setItem('refreshToken', refreshToken);
+                }
     
                 resolve();
             }
