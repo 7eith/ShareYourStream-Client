@@ -5,11 +5,23 @@ type AuthState = {
   refreshToken: string | null;
 };
 
+type AuthResponse = {
+  token: string;
+  refresh_token: string;
+}
+
 type UserState = {
   loggedIn: boolean;
+  id: string | null;
   email: string | null;
-
-}
+  discordId: string | null;
+  discordAccessToken: string | null;
+  discordScopes: string | null;
+  spotifyId: string | null;
+  spotifyAccessToken: string | null;
+  spotifyScopes: string | null;
+  createdAt: Date | null;
+};
 
 type AuthAction = {
   type: string;
