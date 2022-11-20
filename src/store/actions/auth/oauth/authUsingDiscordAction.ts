@@ -3,11 +3,7 @@ import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import { AUTH_SET_TOKENS } from "@/store/types";
-
-type AuthResponse = {
-    token: string;
-    refreshToken: string;
-}
+import { AuthResponse } from "@/types/type";
 
 export const authUsingDiscordAction = createAsyncThunk(
 
@@ -25,7 +21,7 @@ export const authUsingDiscordAction = createAsyncThunk(
         
                 dispatch({ type: AUTH_SET_TOKENS, payload: {
                     accessToken: data.token,
-                    refreshToken: data.refreshToken
+                    refreshToken: data.refresh_token
                 }})
 
                 resolve();

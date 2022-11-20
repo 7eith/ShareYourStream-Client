@@ -1,12 +1,8 @@
 
 import { AUTH_SET_TOKENS } from "@/store/types";
+import { AuthResponse } from "@/types/type";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
-type AuthResponse = {
-    token: string;
-    refreshToken: string;
-}
 
 type RegisterFormData = {
     email: string;
@@ -34,7 +30,7 @@ export const registerUsingCredentialsAction = createAsyncThunk(
         
                 dispatch({ type: AUTH_SET_TOKENS, payload: {
                     accessToken: data.token,
-                    refreshToken: data.refreshToken
+                    refreshToken: data.refresh_token
                 }})
     
                 resolve();
