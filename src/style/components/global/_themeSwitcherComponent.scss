@@ -14,8 +14,8 @@
     }
 
     .button {
-        height: 30px;
-        width: 75px;
+        width: 45px;
+        height: 20px;
         background: #202430;
         border-radius: 80px;
         overflow: hidden;
@@ -27,9 +27,9 @@
 
         &::before {
             content: "";
-            margin: 0 10px;
-            height: 25px;
-            width: 25px;
+            margin: 0 5px;
+            height: 15px;
+            width: 15px;
             background: whitesmoke;
             border-radius: 80px;
             transition: 0.5s;
