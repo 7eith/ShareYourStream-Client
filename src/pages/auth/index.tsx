@@ -27,7 +27,7 @@ const AuthentificationLayout = () => {
     useEffect(() => {
         if (loggedIn)
             navigate(state?.previousPath || Path.Dashboard.Root, { state: { previousPath: pathname }});
-    }, [loggedIn]);
+    }, [loggedIn, navigate, state, pathname]);
 
     return (
         <div className="authLayout">

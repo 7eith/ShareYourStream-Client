@@ -1,9 +1,10 @@
+import DashboardSidebarComponent from "@/components/dashboard/layouts/DashboardSidebarComponent";
 import { RootState } from "@/index";
 import Path from "@/routes/paths";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router";
-import { Outlet, NavLink, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const DashboardPage = () => {
 
@@ -17,12 +18,10 @@ const DashboardPage = () => {
     });
 
     return (
-        <>
-            Dash
+        <div className="dashboard">
+            <DashboardSidebarComponent />
             <Outlet />
-            <NavLink to={Path.Dashboard.Root}>Home</NavLink>
-            <NavLink to={Path.Dashboard.Profile.Root}>Profile</NavLink>
-        </>
+        </div>
     )
 }
 

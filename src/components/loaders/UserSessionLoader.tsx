@@ -16,12 +16,12 @@ const UserSessionLoader = () => {
         if (localStoredToken && !accessToken) {
             dispatch({ type: AUTH_SET_TOKENS, payload: { accessToken: localStoredToken, refreshToken: localStoredRefreshToken }})
         }
-    })
+    }, [accessToken, dispatch])
 
     useEffect(() => {
         if (accessToken)
             dispatch(fetchProfileAction())
-    }, [accessToken])
+    }, [accessToken, dispatch])
 
     return null;
 }
