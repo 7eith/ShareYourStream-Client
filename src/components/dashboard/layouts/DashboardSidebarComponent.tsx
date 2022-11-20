@@ -3,8 +3,32 @@ import { NavLink } from "react-router-dom";
 
 import Logo from "@/assets/SyneziaLogo.png";
 import { ReactComponent as DashboardICO } from "@/assets/svgs/dashboard.svg";
+import { AppDispatch } from "@/index";
+import { useDispatch } from "react-redux";
+import { USER_LOGOUT } from "@/store/types";
+
+const LogoutButtonComponent = () => {
+
+    const dispatch: AppDispatch = useDispatch();
+
+    const logoutUser = () => {
+        localStorage.clear();
+        dispatch({ type: USER_LOGOUT })
+    }
+
+    return (
+        <div className="sidebarRoute" onClick={logoutUser}>
+            <DashboardICO />
+            <div className="routeName">Logout</div>
+        </div>
+    )
+}
 
 const DashboardSidebarComponent = () => {
+
+    const logoutUser = () => {
+        localStorage.clear();
+    }
 
     return (
         <div className="dashboardSidebarContainer">
@@ -61,14 +85,7 @@ const DashboardSidebarComponent = () => {
                         <DashboardICO />
                         <div className="routeName">Top Tracks</div>
                     </NavLink>
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Root}
-                        end
-                    >
-                        <DashboardICO />
-                        <div className="routeName">Logout</div>
-                    </NavLink>
+                    <LogoutButtonComponent />
                 </div>
                 <div className="sidebarSocials">
                     

@@ -1,4 +1,4 @@
-import { AUTH_SET_TOKENS } from "@/store/types";
+import { AUTH_SET_TOKENS, USER_LOGOUT } from "@/store/types";
 import { AuthState } from "@/types/type";
 
 const initialState : AuthState = {
@@ -17,6 +17,9 @@ export default function authReducer(state: AuthState = initialState, action: any
                 accessToken: payload.accessToken,
                 refreshToken: payload.refreshToken
             };
+        
+        case USER_LOGOUT:
+            return initialState;
 
         default:
             return state;
