@@ -1,7 +1,7 @@
 const DashboardHomePage = () => {
 
     return (
-        <div className="home">
+        <div className="dashboardHomePage">
             DASH HOME PAGE
         </div>
     )

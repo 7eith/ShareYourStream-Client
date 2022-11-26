@@ -1,10 +1,21 @@
-import Path from "@/routes/paths";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import Path from "@/routes/paths";
 
 import Logo from "@/assets/SyneziaLogo.png";
-import { ReactComponent as DashboardICO } from "@/assets/svgs/dashboard.svg";
+
+import { ReactComponent as Chevron } from "@/assets/svgs/ico/chevron.svg";
+
+import { ReactComponent as DashboardICO } from "@/assets/svgs/ico/dashboard.svg";
+import { ReactComponent as ProfileICO } from "@/assets/svgs/ico/profile.svg";
+
+import { ReactComponent as ToolsICO } from "@/assets/svgs/ico/tools.svg";
+import { ReactComponent as ExportICO } from "@/assets/svgs/ico/export.svg";
+
+import { ReactComponent as LogoutICO } from "@/assets/svgs/ico/logout.svg";
+
 import { AppDispatch } from "@/index";
-import { useDispatch } from "react-redux";
 import { USER_LOGOUT } from "@/store/types";
 
 const LogoutButtonComponent = () => {
@@ -18,24 +29,27 @@ const LogoutButtonComponent = () => {
 
     return (
         <div className="sidebarRoute" onClick={logoutUser}>
-            <DashboardICO />
+            <LogoutICO />
             <div className="routeName">Logout</div>
         </div>
     )
 }
 
 const DashboardSidebarComponent = () => {
-
-    const logoutUser = () => {
-        localStorage.clear();
-    }
+    
+    const [ expanded, expandSidebar ] = useState<Boolean>(true);
 
     return (
-        <div className="dashboardSidebarContainer">
+        <div className={`dashboardSidebarContainer ${expanded ? "" : "sidebarNotExpanded"}`}>
             <div className="dashboardSidebarContent">
-                <NavLink to={Path.Home.Root} className="sidebarLogo">
-                    <img src={Logo} alt="Share Your Stream" />
-                </NavLink>
+                <div className="sidebarLogo">
+                    <div className="sidebarExpandButton">
+                        <Chevron onClick={() => { expandSidebar(!expanded)}} />
+                    </div>
+                    <NavLink to={Path.Home.Root}>
+                        <img src={Logo} alt="Share Your Stream" />
+                    </NavLink>
+                </div>
                 <div className="sidebarRoutes">
                     <NavLink 
                         className="sidebarRoute" 
@@ -50,45 +64,29 @@ const DashboardSidebarComponent = () => {
                         to={Path.Dashboard.Profile.Root}
                         end
                     >
-                        <DashboardICO />
+                        <ProfileICO />
                         <div className="routeName">Profile</div>
                     </NavLink>
+                    <div className="sidebarGroup">Tools</div>
                     <NavLink 
                         className="sidebarRoute" 
-                        to={Path.Auth.Root}
+                        to={Path.Dashboard.Tools.Root}
                         end
                     >
-                        <DashboardICO />
-                        <div className="routeName">Historique</div>
+                        <ToolsICO />
+                        <div className="routeName">Tools</div>
                     </NavLink>
                     <NavLink 
                         className="sidebarRoute" 
-                        to={Path.Dashboard.Root}
+                        to={Path.Dashboard.Tools.ExportLikes}
                         end
                     >
-                        <DashboardICO />
-                        <div className="routeName">Top Artists</div>
-                    </NavLink>
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Root}
-                        end
-                    >
-                        <DashboardICO />
-                        <div className="routeName">Top Albums</div>
-                    </NavLink>
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Root}
-                        end
-                    >
-                        <DashboardICO />
-                        <div className="routeName">Top Tracks</div>
+                        <ExportICO />
+                        <div className="routeName">Export Likes</div>
                     </NavLink>
                     <LogoutButtonComponent />
                 </div>
                 <div className="sidebarSocials">
-                    
                 </div>
             </div>
         </div>

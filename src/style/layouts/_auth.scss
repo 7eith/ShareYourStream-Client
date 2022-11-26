@@ -63,6 +63,18 @@
                 }
             }
         }
+
+        .authErrorComponent {
+            display: flex;
+            justify-content: center;
+
+            font-family: "Inter";
+            padding: 20px;
+
+            background-color: #f1416d38;
+            border: 1px solid #f1416d74;
+            border-radius: 5px;
+        }
         
         .authForm {
 

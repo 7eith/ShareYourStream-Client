@@ -1,31 +1,46 @@
-import Path from "@/routes/paths";
-import { NavLink } from "react-router-dom";
-
-
-import OAuthProvidersComponent from "@/components/auth/oauth/OAuthProvidersComponent";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
+
+import Path from "@/routes/paths";
+import OAuthProvidersComponent from "@/components/auth/oauth/OAuthProvidersComponent";
 import { AppDispatch } from "@/index";
 import { loginUsingCredentialsAction } from "@/store/actions/auth/loginUsingCredentialsAction";
 
+export enum SignInError { 
+    SPOTIFY = "SPOTIFY",
+    DISCORD = "DISCORD",
+    GOOGLE = "GOOGLE",
+    CREDENTIALS = "CREDENTIALS"
+  }
+
 const SignInPage = () => {
 
+    const location = useLocation();
     const dispatch: AppDispatch = useDispatch();
 
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
 
-    const submit = () => {
-        dispatch(loginUsingCredentialsAction({
-            email: email,
-            password: password
-        }))
-        .then((data) => {
-            console.log(data)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
+    const [ err, setError ] = useState<SignInError | null>(null);
+
+    useEffect(() => {
+        if (location.state && location.state.error) {
+            setError(location.state.error as SignInError);
+            location.state.error = undefined;
+        }
+    }, [location.state])
+
+    const submit = async () => {
+        try {
+            await dispatch(loginUsingCredentialsAction({
+                email: email,
+                password: password
+            })).unwrap()
+        } 
+        catch (err) {
+            setError(SignInError.CREDENTIALS)
+        }
     }
 
     return (

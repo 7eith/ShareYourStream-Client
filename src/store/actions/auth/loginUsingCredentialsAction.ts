@@ -4,7 +4,6 @@ import { AuthResponse } from "@/types/type";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-
 type LoginFormData = {
     email: string;
     password: string;
@@ -37,7 +36,7 @@ export const loginUsingCredentialsAction = createAsyncThunk(
                 resolve();
             }
     
-            catch (error) { // TODO: notification for global instance 
+            catch (error) {
                 if (axios.isAxiosError(error)) 
                     return reject(error.response?.data.message);
 

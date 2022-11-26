@@ -11,6 +11,11 @@ const Path = {
         PasswordForgot: {
             Root: "/auth/passwordForgot",
             Change: "/auth/passwordForgot/:token"
+        },
+
+        OAuth: {
+            DiscordCallback: "/auth/discord",
+            SpotifyCallback: "/auth/spotify"
         }
     },
 
@@ -20,6 +25,11 @@ const Path = {
 
         Profile: {
             Root: "/app/profile",
+        },
+
+        Tools: {
+            Root: "/app/tools",
+            ExportLikes: "/app/tools/exportLikes"
         }
     },
 

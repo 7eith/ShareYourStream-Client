@@ -1,3 +1,4 @@
+import DashboardHeaderComponent from "@/components/dashboard/layouts/DashboardHeaderComponent";
 import DashboardSidebarComponent from "@/components/dashboard/layouts/DashboardSidebarComponent";
 import { RootState } from "@/index";
 import Path from "@/routes/paths";
@@ -20,7 +21,11 @@ const DashboardPage = () => {
     return (
         <div className="dashboard">
             <DashboardSidebarComponent />
-            <Outlet />
+            <div className="dashboardPage">
+                <DashboardHeaderComponent />
+                <Outlet />
+                {/* <div className="footer">Share Your Stream (c) Aspera Soft</div> */}
+            </div>
         </div>
     )
 }

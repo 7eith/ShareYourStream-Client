@@ -20,6 +20,10 @@ import SignUpPage from "@/pages/auth/SignUpPage";
 import PasswordForgotLayout from "@/pages/auth/password";
 import PasswordForgotRequestPage from "@/pages/auth/password/PasswordForgotRequestPage";
 import PasswordForgotChangePage from "@/pages/auth/password/PasswordForgotChangePage";
+import SpotifyCallbackPage from "@/pages/auth/oauth/SpotifyCallbackPage";
+import DiscordCallbackPage from "@/pages/auth/oauth/DiscordCallbackPage";
+import ToolsPage from "@/pages/dashboard/tools/ToolsPage";
+import ExportLikesToolPage from "@/pages/dashboard/tools/ExportLikesToolPage";
 
 const TitleObserver = () => {
 
@@ -54,12 +58,21 @@ const Router = () => {
                         <Route index element={<PasswordForgotRequestPage />} />
                         <Route path={Path.Auth.PasswordForgot.Change} element={<PasswordForgotChangePage />} />
                     </Route>
+
+                    <Route path={Path.Auth.OAuth.SpotifyCallback} element={<SpotifyCallbackPage />} />
+                    <Route path={Path.Auth.OAuth.DiscordCallback} element={<DiscordCallbackPage />} />
                 </Route>
                 
                 <Route path={Path.Dashboard.Root} element={<DashboardPage />} >
                     <Route index element={<DashboardHomePage />} />
 
                     <Route path={Path.Dashboard.Profile.Root} element={<ProfilePage />} />
+
+                    <Route path={Path.Dashboard.Tools.Root}>
+                        <Route index element={<ToolsPage />} />
+
+                        <Route path={Path.Dashboard.Tools.ExportLikes} element={<ExportLikesToolPage />} />
+                    </Route>
                 </Route>
 
                 <Route path="*" element={<ErrorPage />} />
