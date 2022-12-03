@@ -3,6 +3,8 @@
 
 @import 'utilities/darkMode';
 
+@import 'animate.css';
+
 body {
     font-family: 'Inter';
     color: var(--textColor);
@@ -23,7 +25,10 @@ body {
 
 @import 'components/global/themeSwitcherComponent';
 
+@import 'components/dashboard/layouts/mobileSidebar';
 @import 'components/dashboard/layouts/sidebar';
 @import 'components/dashboard/layouts/header';
+
+@import 'pages/dashboard/tools/exportLikes';
 
 @import 'pages/dashboard/homePage';

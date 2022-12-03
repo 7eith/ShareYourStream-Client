@@ -1,26 +1,27 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import Path from "@/routes/paths";
-
-import Logo from "@/assets/SyneziaLogo.png";
-
-import { ReactComponent as Chevron } from "@/assets/svgs/ico/chevronLeft.svg";
-
+import { ReactComponent as LogoutICO } from "@/assets/svgs/ico/logout.svg";
 import { ReactComponent as DashboardICO } from "@/assets/svgs/ico/dashboard.svg";
 import { ReactComponent as ProfileICO } from "@/assets/svgs/ico/profile.svg";
-
 import { ReactComponent as ToolsICO } from "@/assets/svgs/ico/tools.svg";
 import { ReactComponent as ExportICO } from "@/assets/svgs/ico/export.svg";
 
-import { ReactComponent as LogoutICO } from "@/assets/svgs/ico/logout.svg";
+import { NavLink } from "react-router-dom";
+import Path from "@/routes/paths";
+import { useRef } from "react";
 
+import { useOnClickOutside } from "usehooks-ts";
 import { AppDispatch } from "@/index";
+import { useDispatch } from "react-redux";
 import { USER_LOGOUT } from "@/store/types";
 
-const LogoutButtonComponent = () => {
+const MobileSidebarComponent: React.FC<{ showNavbarState: any }> = ({ showNavbarState }) => {
 
     const dispatch: AppDispatch = useDispatch();
+
+    const ref = useRef(null);
+
+    const handleClickOutside = () => {
+        showNavbarState(false);
+    }
 
     const logoutUser = () => {
         localStorage.removeItem('token')
@@ -28,33 +29,26 @@ const LogoutButtonComponent = () => {
         dispatch({ type: USER_LOGOUT })
     }
 
-    return (
-        <div className="sidebarRoute" onClick={logoutUser}>
-            <LogoutICO />
-            <div className="routeName">Logout</div>
-        </div>
-    )
-}
-
-const DashboardSidebarComponent = () => {
-    
-    const [ expanded, setExpandSidebar ] = useState<Boolean>(true);
+    useOnClickOutside(ref, handleClickOutside);
 
     return (
-        <div className={`dashboardSidebarContainer ${expanded ? "" : "sidebarNotExpanded"}`}>
-            <div className="dashboardSidebarContent">
-                <div className="sidebarLogo">
-                    <div className="sidebarExpandButton">
-                        <Chevron onClick={() => { setExpandSidebar(!expanded)}} />
+        <div className="mobileSidebarContainer">
+            <div    
+                className="mobileSidebarContent" 
+                ref={ref}
+            >
+                <div className="userProfile">
+                    <div className="profile">
+                        <div className="name">7eith</div>
+                        <LogoutICO onClick={logoutUser} />
                     </div>
-                    <NavLink to={Path.Home.Root}>
-                        <img src={Logo} alt="Share Your Stream" />
-                    </NavLink>
+                    <div className="userRoles">Owner</div>
                 </div>
                 <div className="sidebarRoutes">
                     <NavLink 
                         className="sidebarRoute" 
                         to={Path.Dashboard.Root}
+                        onClick={handleClickOutside}
                         end
                     >
                         <DashboardICO />
@@ -63,6 +57,7 @@ const DashboardSidebarComponent = () => {
                     <NavLink 
                         className="sidebarRoute" 
                         to={Path.Dashboard.Profile.Root}
+                        onClick={handleClickOutside}
                         end
                     >
                         <ProfileICO />
@@ -71,6 +66,7 @@ const DashboardSidebarComponent = () => {
                     <NavLink 
                         className="sidebarRoute" 
                         to={Path.Dashboard.Tools.Root}
+                        onClick={handleClickOutside}
                         end
                     >
                         <ToolsICO />
@@ -80,18 +76,16 @@ const DashboardSidebarComponent = () => {
                     <NavLink 
                         className="sidebarRoute" 
                         to={Path.Dashboard.Tools.ExportLikes}
+                        onClick={handleClickOutside}
                         end
                     >
                         <ExportICO />
                         <div className="routeName">Export Likes</div>
                     </NavLink>
-                    <LogoutButtonComponent />
-                </div>
-                <div className="sidebarSocials">
                 </div>
             </div>
         </div>
     )
 }
 
-export default DashboardSidebarComponent;
+export default MobileSidebarComponent;

@@ -1,6 +1,6 @@
 .dashboardSidebarContainer {
 
-    transition: all .5s ease-in-out;
+    transition: width 0.5s ease;
 
     display: flex;
     width: 210px;
@@ -37,7 +37,7 @@
                     width: 48px;
                     height: 70px;
     
-                    transition: all ease 2s;
+                    transition: all ease 1s;
                     &:hover {
                         transform: scale(1.2);
                     }
@@ -54,6 +54,8 @@
 
                 fill: #474774;
 
+                transition: transform 0.7s ease;
+
                 svg {
                     border: 2px solid #494974;
                     border-radius: 20px;
@@ -62,8 +64,6 @@
                     fill: #8f8fd9;
                     
                     transition: opacity 1s;
-                    transition: transform .5s ease-in-out;
-
                     cursor: pointer;
 
                     &:hover {
@@ -173,6 +173,11 @@
 
     width: 65px;
 
+    .sidebarLogo a img {
+        width: 28px;
+        height: 40px
+    }
+
     .routeName { display: none ;}
 
     .sidebarRoutes {
@@ -180,12 +185,23 @@
         .sidebarRoute {
             width: auto;
         }
+
+        .sidebarGroup {
+            width: auto;
+        }
     }
 
     .sidebarExpandButton {
-        transform: rotate(180deg);
-        transition: transform .5s ease-in-out;
+        transform: rotateZ(180deg);
+        transition: transform 0.7s ease;
+    }
 
+}
+
+@media screen and (max-width: 425px) {
+
+    .dashboardSidebarContainer { 
+        display: none;
     }
 
 }

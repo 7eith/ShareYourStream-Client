@@ -1,0 +1,158 @@
+
+.mobileSidebarContainer {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    background-color: rgba(0, 0, 0, 0.45);
+
+    .mobileSidebarContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        background-color: #1c1c34;
+
+        width: 210px;
+        height: 100%;
+        padding: 25px 10px;
+
+        animation: fadeInLeft;
+        animation-duration: 0.5s;
+
+        .userProfile {
+            font-family: 'Inter';
+            font-weight: 500;
+            padding: 0px 5px;
+
+            .profile {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                
+                font-size: 22px;
+                color: #9c9ce2;
+                
+                svg {
+                    padding: 5px;
+                    margin: 3px;
+                    border-radius: 7px;
+                    transition: all ease 0.5s;
+                    cursor: pointer;
+    
+                    &:hover {
+                        transition: all ease 0.5s;
+    
+                        background-color: #8f8fcc;
+                        color: white;
+                    }
+                }
+            }
+
+            .userRoles {
+                display: inline-block;
+                padding: 0.325rem 0.5rem;
+                font-size: 0.85rem;
+                font-weight: 600;
+                line-height: 1;
+                color: white;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: baseline;
+                border-radius: 0.425rem;
+                background-color: #8f8fcc;
+
+            }
+        }
+
+        .sidebarRoutes {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+
+            width: 100%;
+            
+            padding: 10px 0px;
+            margin-top: 20px;
+            border-top: 1px solid #9c9ce233;
+
+            .sidebarGroup {
+                margin: 5px;
+                display: flex;
+
+                font-family: "Inter";
+                font-size: 13px;
+                text-transform: uppercase;
+
+                width: 100%;
+                font-weight: 500;
+                color: #838396;
+
+            }
+
+            .sidebarRoute {
+
+                display: flex;
+                align-items: center;
+
+                width: 90%;
+                
+                margin: 5px 0px;
+                padding: 7px;
+
+                text-decoration: none;
+
+                transition: all ease 0.5s;
+
+                svg {
+                    text-decoration: none;
+
+                    width: 20px;
+                    height: 20px;
+
+                    color: var(--svgColor);
+
+                    path {
+                        fill: var(--svgColor);
+                    }
+                }
+
+                .routeName {
+                    font-weight: 400;
+                    font-family: 'Poppins';
+                    font-size: 14px;
+    
+                    text-decoration: none;
+    
+                    color: #9D9DA6;
+    
+                    margin-left: 10px;
+                }
+
+                &:hover {
+                    border-radius: 5px;
+                    color: white;
+                }
+            }
+
+            .active {
+                svg { 
+                    color: var(--svgColor);
+
+                    path {
+                        fill: var(--svgColor);
+                    }
+                 }
+                .routeName { color: white; }
+            }
+        }
+    }
+}

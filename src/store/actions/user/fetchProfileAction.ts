@@ -30,7 +30,11 @@ export const fetchProfileAction = createAsyncThunk<Promise<void>, void, { state:
                 resolve();
             }
     
-            catch (error) { // TODO: notification for global instance 
+            catch (error) {
+                if (localStorage.getItem('token')) {
+                    localStorage.removeItem('token')
+                }
+                console.log(localStorage.getItem('token'))
                 if (axios.isAxiosError(error)) 
                     return reject(error.response?.data.message);
 
