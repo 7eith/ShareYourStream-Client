@@ -29,6 +29,8 @@ body {
 @import 'components/dashboard/layouts/sidebar';
 @import 'components/dashboard/layouts/header';
 
+@import 'components/dashboard/middleware';
+
 @import 'pages/dashboard/tools/exportLikes';
 
 @import 'pages/dashboard/homePage';
