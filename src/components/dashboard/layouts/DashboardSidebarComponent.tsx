@@ -63,7 +63,6 @@ const DashboardSidebarComponent = () => {
                     <NavLink 
                         className="sidebarRoute" 
                         to={Path.Dashboard.Profile.Root}
-                        end
                     >
                         <ProfileICO />
                         <div className="routeName">Profile</div>

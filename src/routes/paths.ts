@@ -25,6 +25,7 @@ const Path = {
 
         Profile: {
             Root: "/app/profile",
+            Me: "/app/profile/@me"
         },
 
         Tools: {
