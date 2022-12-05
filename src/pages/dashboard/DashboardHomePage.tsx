@@ -1,8 +1,10 @@
+import DashboardBreadcrumbComponent from "@/components/dashboard/layouts/DashboardBreadcrumbComponent";
+
 const DashboardHomePage = () => {
 
     return (
         <div className="dashboardHomePage">
-            DASH HOME PAGE
+
         </div>
     )
 }

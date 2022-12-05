@@ -13,7 +13,7 @@ const DashboardHeaderComponent = () => {
 
     const [ showMobileNavbar, toggleMobileNavbar ] = useState<Boolean>(false);
 
-    const DEBUG_link = "https://media3.giphy.com/media/ekGymRUDeV6r1MDdQH/giphy.gif?cid=790b76110afe9780812fe0280639621f6a65277c13a47103&rid=giphy.gif&ct=g";
+    const DEBUG_link = "https://i.pinimg.com/originals/88/c1/2d/88c12dfcb28c16e51b30234a0513a74c.jpg";
 
     return (
         <div className="dashboardHeaderContainer">

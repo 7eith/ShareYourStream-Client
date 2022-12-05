@@ -16,22 +16,10 @@ const ProfilePageHeader = () => {
     const { currentPath } = useContext(ProfileContext) as ProfileContextType;
     const { spotifyId  } = useSelector((state: RootState) => state.user);
 
-
     const DEBUG_link = "https://i.pinimg.com/originals/88/c1/2d/88c12dfcb28c16e51b30234a0513a74c.jpg";
 
-    // TODO: do breadcrumb here 
-    
     return (
         <div className="profileLayoutHeader">
-            <div className="profilePageTitle">
-                <div className="title">
-                    <div className="pageTitle">Profile</div>
-                    <div className="pageBreadcrumb">Home • Profile</div> 
-                </div>
-                <div className="actions">
-                    <div className="action icoBtn"><DotsICO /></div>
-                </div>
-            </div>
             <div className="profilePageUserProfileContainer">
                 <div className="profilePageUserProfileContent">
                     <div className="profileAvatarSection">
@@ -50,7 +38,7 @@ const ProfilePageHeader = () => {
                                 <div className="profileActions">
                                     <a href="https://shareyourstream.com/user/@Seith"><ShareICO /></a>                               
                                     {/* <CogICO /> */}
-                                    {/* <DotsICO /> */}
+                                    <DotsICO />
                                 </div>
                             </div>
                             <div className="userSocialContainer">
