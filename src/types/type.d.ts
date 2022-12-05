@@ -14,6 +14,7 @@ type UserState = {
   loggedIn: boolean;
   id: string | null;
   email: string | null;
+  username: string | null;
   discordId: string | null;
   discordAccessToken: string | null;
   discordScopes: string | null;

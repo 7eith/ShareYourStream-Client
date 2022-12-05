@@ -4,6 +4,7 @@ import { UserState } from "@/types/type";
 const initialState : UserState = {
     loggedIn: false,
     id: null,
+    username: null,
     email: null,
     discordId: null,
     discordAccessToken: null,
@@ -26,6 +27,7 @@ export default function userReducer(state: UserState = initialState, action: any
                 loggedIn: true,
                 id: payload.id,
                 email: payload?.email,
+                username: payload?.username,
                 discordId: payload?.discordId,
                 discordAccessToken: payload?.discordAccessToken,
                 discordScopes: payload?.discordScopes,
