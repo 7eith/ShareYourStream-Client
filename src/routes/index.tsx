@@ -25,6 +25,7 @@ import DiscordCallbackPage from "@/pages/auth/oauth/DiscordCallbackPage";
 import ToolsPage from "@/pages/dashboard/tools/ToolsPage";
 import ExportLikesToolPage from "@/pages/dashboard/tools/ExportLikesToolPage";
 import ProfileOverview from "@/pages/dashboard/profile/ProfileOverview";
+import DashboardErrorPage from "@/pages/dashboard/utils/DashboardErrorPage";
 
 const TitleObserver = () => {
 
@@ -78,10 +79,11 @@ const Router = () => {
 
                         <Route path={Path.Dashboard.Tools.ExportLikes} element={<ExportLikesToolPage />} />
                     </Route>
+
+                    <Route path="*" element={<DashboardErrorPage />} />
                 </Route>
 
                 <Route path="*" element={<ErrorPage />} />
-                
             </Routes>
         </>
     );
