@@ -24,7 +24,7 @@ import SpotifyCallbackPage from "@/pages/auth/oauth/SpotifyCallbackPage";
 import DiscordCallbackPage from "@/pages/auth/oauth/DiscordCallbackPage";
 import ToolsPage from "@/pages/dashboard/tools/ToolsPage";
 import ExportLikesToolPage from "@/pages/dashboard/tools/ExportLikesToolPage";
-import MyProfilePage from "@/pages/dashboard/profile/MyProfilePage";
+import ProfileOverview from "@/pages/dashboard/profile/ProfileOverview";
 
 const TitleObserver = () => {
 
@@ -70,7 +70,7 @@ const Router = () => {
                     <Route path={Path.Dashboard.Profile.Root} element={<ProfilePage />}> 
                         <Route index element={<Navigate to="@me" />} />
 
-                        <Route path={Path.Dashboard.Profile.Me} element={<MyProfilePage />} />
+                        <Route path={Path.Dashboard.Profile.Me} element={<ProfileOverview />} />
                     </Route>
 
                     <Route path={Path.Dashboard.Tools.Root}>
