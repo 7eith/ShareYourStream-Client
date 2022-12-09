@@ -14,7 +14,7 @@ body {
 .app {
     background: var(--bgColor);
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     overflow: hidden;
     margin: 0 auto;
 }
@@ -24,6 +24,7 @@ body {
 @import 'layouts/dashboard/profile';
 
 @import 'pages/landingPage';
+@import 'pages/streamHistoryPage';
 @import 'pages/dashboardPage';
 
 @import 'components/global/themeSwitcherComponent';

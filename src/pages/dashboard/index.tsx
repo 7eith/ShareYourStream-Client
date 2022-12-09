@@ -24,7 +24,6 @@ const DashboardPage = () => {
             <div className="dashboardPage">
                 <DashboardHeaderComponent />
                 <Outlet />
-                {/* <div className="footer">Share Your Stream (c) Aspera Soft</div> */}
             </div>
         </div>
     )

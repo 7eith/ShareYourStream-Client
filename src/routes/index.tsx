@@ -26,6 +26,7 @@ import ToolsPage from "@/pages/dashboard/tools/ToolsPage";
 import ExportLikesToolPage from "@/pages/dashboard/tools/ExportLikesToolPage";
 import ProfileOverview from "@/pages/dashboard/profile/ProfileOverview";
 import DashboardErrorPage from "@/pages/dashboard/utils/DashboardErrorPage";
+import StreamHistoryPage from "@/pages/dashboard/streams/StreamHistoryPage";
 
 const TitleObserver = () => {
 
@@ -78,6 +79,13 @@ const Router = () => {
                         <Route index element={<ToolsPage />} />
 
                         <Route path={Path.Dashboard.Tools.ExportLikes} element={<ExportLikesToolPage />} />
+                    </Route>
+
+                    <Route path={Path.Dashboard.Streams.Root}>
+                        <Route index element={<ToolsPage />} />
+
+                        <Route path={Path.Dashboard.Streams.History} element={<StreamHistoryPage />} />
+                        <Route path={Path.Dashboard.Streams.Charts} element={<ExportLikesToolPage />} />
                     </Route>
 
                     <Route path="*" element={<DashboardErrorPage />} />

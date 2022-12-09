@@ -15,6 +15,9 @@ import { ReactComponent as ExportICO } from "@/assets/svgs/ico/export.svg";
 
 import { ReactComponent as LogoutICO } from "@/assets/svgs/ico/logout.svg";
 
+import { ReactComponent as HistoryICO } from "@/assets/svgs/ico/history.svg";
+
+
 import { AppDispatch } from "@/index";
 import { USER_LOGOUT } from "@/store/types";
 
@@ -69,13 +72,21 @@ const DashboardSidebarComponent = () => {
                     </NavLink>
                     <NavLink 
                         className="sidebarRoute" 
+                        to={Path.Dashboard.Streams.History}
+                        end
+                    >
+                        <HistoryICO />
+                        <div className="routeName">History</div>
+                    </NavLink>
+                    <div className="sidebarGroup">Tools</div>
+                    <NavLink 
+                        className="sidebarRoute" 
                         to={Path.Dashboard.Tools.Root}
                         end
                     >
                         <ToolsICO />
                         <div className="routeName">Tools</div>
                     </NavLink>
-                    <div className="sidebarGroup">Tools</div>
                     <NavLink 
                         className="sidebarRoute" 
                         to={Path.Dashboard.Tools.ExportLikes}

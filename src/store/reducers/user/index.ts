@@ -1,4 +1,4 @@
-import { USER_LOGOUT, USER_SET_PROFILE } from "@/store/types";
+import { USER_LOGOUT, USER_SET_PROFILE, USER_UPDATE_SPOTIFY_TOKEN } from "@/store/types";
 import { UserState } from "@/types/type";
 
 const initialState : UserState = {
@@ -36,6 +36,12 @@ export default function userReducer(state: UserState = initialState, action: any
                 spotifyScopes: payload?.spotifyScopes,
                 createdAt: payload.createdAt
             }
+
+        case USER_UPDATE_SPOTIFY_TOKEN: 
+            return {
+                ...state,
+                spotifyAccessToken: payload?.spotifyAccessToken
+            };
             
         case USER_LOGOUT:
             return initialState;
