@@ -16,7 +16,7 @@
             }
 
             .pageBreadcrumb {
-                font-weight: 600;
+                // font-weight: 600;
                 color: #565674;
             }
         }
@@ -36,17 +36,15 @@
                 border-radius: 7px;
 
                 cursor: pointer;
+    
+                svg {
+                    color: #565674;
+                }
 
                 &:hover {
                     background-color: #48486a;
-                }
-            }
 
-            svg {
-                color: #565674;
-
-                &:hover {
-                    color: white;
+                    svg { color: white; }
                 }
             }
         }

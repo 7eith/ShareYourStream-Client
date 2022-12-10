@@ -3,7 +3,7 @@
 $themes: (
     bgColor: (
         darkTheme: $darkBlue300,
-        lightTheme: #e3e3e3,
+        lightTheme: #F5F8FA,
     ),
     textColor: (
         darkTheme: white,
@@ -56,6 +56,10 @@ $themes: (
     ),
     cardBackgroundColor: (
         darkTheme: #1c1c34
+    ),
+    headerBgColor: (
+        darkTheme: #26263f,
+        lightTheme: white
     )
 );
 
