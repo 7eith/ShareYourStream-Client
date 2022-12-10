@@ -6,6 +6,7 @@ import { ReactComponent as ReloadICO } from "@/assets/svgs/ico/reload.svg";
 import { useEffectOnce, useTimeout } from "usehooks-ts";
 import { useSelector } from "react-redux";
 import { RootState } from "@/index";
+import { useRecentlyPlayedTracks } from "@/hooks/store/spotify/useRecentlyPlayedTracksHooks";
 
 const StreamHistoryTable: React.FC<{ items: PlayHistoryObject[]}> = ({ items }) => {
 
@@ -39,47 +40,18 @@ const StreamHistoryTable: React.FC<{ items: PlayHistoryObject[]}> = ({ items }) 
 
 const StreamHistoryPage = () => {
 
+    const { recentlyPlayedTracks, reload, isError, isLoading } = useRecentlyPlayedTracks();
     const { spotifyId } = useSelector((state: RootState) => state.user);
-
-    const [ listenHistory, setListenHistory ] = useState<UsersRecentlyPlayedTracksResponse>();
-    const [ isFetching, setFetchingState ] = useState<boolean>(false);
-    
-    const [ isLoading, setLoadingState ] = useState<boolean>(true);
-    const [ error, setError ] = useState<string | null>(null);
-    
-    useEffect(() => {
-        
-        if (listenHistory === undefined && !isFetching && spotifyId) {
-            setFetchingState(true)
-        
-            const spotifyService = new SpotifyAPIService();
-
-            spotifyService.getListenHistory()
-            .then((response: UsersRecentlyPlayedTracksResponse) => {
-                setListenHistory(response);
-                setLoadingState(false);
-            })
-            .catch((err: { status: number, message: string; }) => {
-                setError(err.message);
-                setLoadingState(false)
-            })
-            .finally(() => {
-                setFetchingState(false);
-            })
-
-        }
-    })
-    
 
     return (
         <div className="streamHistoryPage">
             <DashboardBreadcrumbComponent pageTitle={"Stream History"} pagePath={["Listened Song"]} />
             <div className="dashboardCard">
                 <div className="cardHeader">
-                    <div className="cardTitle">{ isLoading ? "Loading..." : "Listening History" }</div>
+                    <div className="cardTitle">Listening History</div>
                     <div className="cardTitleActions">
                         <div className="action">
-                            <div className="label" onClick={() => { setListenHistory(undefined)} }>
+                            <div className="label" onClick={reload}>
                                 Reload
                             </div>
                         </div>
@@ -87,13 +59,13 @@ const StreamHistoryPage = () => {
                 </div>
                 <div className="cardContent streamHistoryContainer">
                     {
-                        isLoading || error !== null ? (
-                            error !== null ? error : "Loading..."
-                        ) : null
-                    }
-                    { 
-                        listenHistory?.items !== undefined ? <StreamHistoryTable items={listenHistory.items} /> : null
-                    }
+                    isError ? (
+                        <>Oh no, there was an error</>
+                    ) : isLoading ? (
+                        <>Loading...</>
+                    ) : recentlyPlayedTracks ? (
+                        <StreamHistoryTable items={recentlyPlayedTracks.items} />
+                    ) : null}
                 </div>
             </div>
         </div>

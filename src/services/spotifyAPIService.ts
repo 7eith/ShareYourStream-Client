@@ -90,7 +90,7 @@ export class SpotifyAPIService {
         } catch (error: any) {
             console.log(error)
 
-            if (error.status == 401) {
+            if (error.status === 401) {
                 await this.refreshSpotifyToken();
 
                 console.log('giving')

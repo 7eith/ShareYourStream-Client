@@ -1,4 +1,3 @@
-import ThemeSwitcherButton from "@/components/global/ThemeSwitcherButton";
 import { useTheme } from "@/hooks/useTheme";
 import Routes from "@/routes";
 
@@ -8,7 +7,6 @@ const App = () => {
 
 	return (
 		<div className={`app ${theme}`}>
-			{/* <ThemeSwitcherButton /> */}
 			<Routes />
 		</div>
 	);
