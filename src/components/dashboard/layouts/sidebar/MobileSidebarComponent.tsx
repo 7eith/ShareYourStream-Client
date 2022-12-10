@@ -12,6 +12,7 @@ import { useOnClickOutside } from "usehooks-ts";
 import { AppDispatch } from "@/index";
 import { useDispatch } from "react-redux";
 import { USER_LOGOUT } from "@/store/types";
+import SidebarRoutes from "./SidebarRoutes";
 
 const MobileSidebarComponent: React.FC<{ showNavbarState: any }> = ({ showNavbarState }) => {
 
@@ -42,47 +43,9 @@ const MobileSidebarComponent: React.FC<{ showNavbarState: any }> = ({ showNavbar
                         <div className="name">7eith</div>
                         <LogoutICO onClick={logoutUser} />
                     </div>
-                    <div className="userRoles">Owner</div>
+                    <div className="userRoles">Founder</div>
                 </div>
-                <div className="sidebarRoutes">
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Root}
-                        onClick={handleClickOutside}
-                        end
-                    >
-                        <DashboardICO />
-                        <div className="routeName">Home</div>
-                    </NavLink>
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Profile.Root}
-                        onClick={handleClickOutside}
-                        end
-                    >
-                        <ProfileICO />
-                        <div className="routeName">Profile</div>
-                    </NavLink>
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Tools.Root}
-                        onClick={handleClickOutside}
-                        end
-                    >
-                        <ToolsICO />
-                        <div className="routeName">Tools</div>
-                    </NavLink>
-                    <div className="sidebarGroup">Tools</div>
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Tools.ExportLikes}
-                        onClick={handleClickOutside}
-                        end
-                    >
-                        <ExportICO />
-                        <div className="routeName">Export Likes</div>
-                    </NavLink>
-                </div>
+                <SidebarRoutes />
             </div>
         </div>
     )

@@ -20,6 +20,7 @@ import { ReactComponent as HistoryICO } from "@/assets/svgs/ico/history.svg";
 
 import { AppDispatch } from "@/index";
 import { USER_LOGOUT } from "@/store/types";
+import SidebarRoutes from "./sidebar/SidebarRoutes";
 
 const LogoutButtonComponent = () => {
 
@@ -54,49 +55,7 @@ const DashboardSidebarComponent = () => {
                         <img src={Logo} alt="Share Your Stream" />
                     </NavLink>
                 </div>
-                <div className="sidebarRoutes">
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Root}
-                        end
-                    >
-                        <DashboardICO />
-                        <div className="routeName">Home</div>
-                    </NavLink>
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Profile.Root}
-                    >
-                        <ProfileICO />
-                        <div className="routeName">Profile</div>
-                    </NavLink>
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Streams.History}
-                        end
-                    >
-                        <HistoryICO />
-                        <div className="routeName">History</div>
-                    </NavLink>
-                    <div className="sidebarGroup">Tools</div>
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Tools.Root}
-                        end
-                    >
-                        <ToolsICO />
-                        <div className="routeName">Tools</div>
-                    </NavLink>
-                    <NavLink 
-                        className="sidebarRoute" 
-                        to={Path.Dashboard.Tools.ExportLikes}
-                        end
-                    >
-                        <ExportICO />
-                        <div className="routeName">Export Likes</div>
-                    </NavLink>
-                    <LogoutButtonComponent />
-                </div>
+                <SidebarRoutes />
                 <div className="sidebarSocials">
                 </div>
             </div>
