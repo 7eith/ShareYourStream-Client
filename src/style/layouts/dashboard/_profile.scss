@@ -4,11 +4,12 @@
     flex: 1;
 
     .profileLayoutHeader {
+        
         .profilePageUserProfileContainer {
             margin: 15px 20px;
-            background-color: #1e1e2d;
+            background-color: var(--cardBackgroundColor);
             border-radius: 7px;
-            box-shadow: 0px 0px 20px 0px rgb(76 87 125 / 2%);
+            box-shadow: var(--cardShadow);
 
             .profilePageUserProfileContent {
                 display: flex;

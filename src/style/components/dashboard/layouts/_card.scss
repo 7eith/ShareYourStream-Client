@@ -1,0 +1,50 @@
+.dashboardCard {
+    margin: 15px 20px;
+    background-color: var(--cardBackgroundColor);
+    border-radius: 5px;
+    box-shadow: var(--cardShadow);
+
+
+    animation: fadeIn;
+    animation-duration: .7s;
+
+    .cardHeader {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 15px 20px;
+        color: white;
+        font-family: 'Poppins';
+        border-bottom: 1px solid var(--cardBorderColor);
+
+        .cardTitle {
+            color: var(--cardTitleColor);
+        }
+
+        .cardTitleActions {
+
+            .action {
+                display: flex;
+                align-items: center;
+                // font-size: 13px;
+                padding: 5px;
+
+                cursor: pointer;
+                color: #6b6b96;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    margin-right: 5px;
+                }
+
+                &:hover {
+                    color: #9c9ce2;
+                }
+            }
+
+        }
+    }
+}

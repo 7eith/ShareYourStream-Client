@@ -5,7 +5,8 @@
     display: flex;
     width: 210px;
 
-    background-color: #1c1c34;
+    background-color: var(--sidebarBgColor);
+    box-shadow: var(--sidebarShadow);
 
     .dashboardSidebarContent {
 

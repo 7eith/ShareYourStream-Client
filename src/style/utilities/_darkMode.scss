@@ -55,11 +55,30 @@ $themes: (
         lightTheme: $lightGrey200
     ),
     cardBackgroundColor: (
-        darkTheme: #1c1c34
+        darkTheme: #1e1e2d,
+        lightTheme: white
+    ),
+    cardShadow: (
+        lightTheme: 0px 0.5rem 1.5rem 0.5rem rgb(0 0 0 / 10%)
+    ),
+    cardBorderColor: (
+        darkTheme: #2B2B40,
+        lightTheme: #ebebeb
+    ),
+    cardTitleColor: (
+        darkTheme: white,
+        lightTheme: #1c1c2b
     ),
     headerBgColor: (
         darkTheme: #26263f,
         lightTheme: white
+    ),
+    sidebarBgColor: (
+        darkTheme: #1c1c34,
+        lightTheme: white
+    ),
+    sidebarShadow: (
+        lightTheme: 4px 1rem 2rem 0rem rgb(0 0 0 / 15%)
     )
 );
 
