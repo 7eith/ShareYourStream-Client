@@ -1,22 +1,8 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import Path from "@/routes/paths";
-
-import Logo from "@/assets/SyneziaLogo.png";
 
 import { ReactComponent as Chevron } from "@/assets/svgs/ico/chevronLeft.svg";
-
-import { ReactComponent as DashboardICO } from "@/assets/svgs/ico/dashboard.svg";
-import { ReactComponent as ProfileICO } from "@/assets/svgs/ico/profile.svg";
-
-import { ReactComponent as ToolsICO } from "@/assets/svgs/ico/tools.svg";
-import { ReactComponent as ExportICO } from "@/assets/svgs/ico/export.svg";
-
 import { ReactComponent as LogoutICO } from "@/assets/svgs/ico/logout.svg";
-
-import { ReactComponent as HistoryICO } from "@/assets/svgs/ico/history.svg";
-
 
 import { AppDispatch } from "@/index";
 import { USER_LOGOUT } from "@/store/types";
@@ -51,13 +37,9 @@ const DashboardSidebarComponent = () => {
                     <div className="sidebarExpandButton">
                         <Chevron onClick={() => { setExpandSidebar(!expanded)}} />
                     </div>
-                    <NavLink to={Path.Home.Root}>
-                        <img src={Logo} alt="Share Your Stream" />
-                    </NavLink>
                 </div>
                 <SidebarRoutes />
-                <div className="sidebarSocials">
-                </div>
+                <div className="sidebarSocials" />
             </div>
         </div>
     )

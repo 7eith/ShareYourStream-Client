@@ -1,8 +1,6 @@
 .dashboardHeaderContainer {
 
     display: flex;
-    height: 60px;
-    margin: 40px 10px 20px 10px;
 
     .dashboardHeaderContent {
 
@@ -11,11 +9,7 @@
         align-items: center;
         flex: 1;
 
-        background-color: var(--headerBgColor);
-        box-shadow: var(--cardShadow);
-
-        border-radius: 7px;
-        padding: 0px 10px;
+        padding: 5px 10px;
 
         .headerNavbar {
 
@@ -37,11 +31,7 @@
             .expandSidebarButton {
                 display: none;
                 color: #9c9ce2;
-                /* padding: 16px; */
-                /* margin: 3px; */
                 border-radius: 7px;
-                padding-left: 5px;
-                padding-top: 3px;
                 transition: all ease 0.5s;
                 cursor: pointer;
             }
@@ -122,7 +112,11 @@
 @media screen and (max-width: 425px) {
 
     .dashboardHeaderContainer { 
-        margin: 15px 10px;
+        margin: 5px 10px;
+
+        .dashboardHeaderContent {
+            padding: none !important;
+        }
     }
 
     .headerNavbar .expandSidebarButton {
