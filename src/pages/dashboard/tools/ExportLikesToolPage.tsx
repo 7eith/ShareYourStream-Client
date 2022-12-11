@@ -4,7 +4,7 @@ import SpotifyLinkedMiddleware from "@/components/dashboard/middlewares/SpotifyL
 
 const ExportLikesToolPage = () => {
 
-    const { spotifyAccessToken, spotifyId  } = useSelector((state: RootState) => state.user);
+    const { spotifyId  } = useSelector((state: RootState) => state.user);
 
     return (
         spotifyId ? (

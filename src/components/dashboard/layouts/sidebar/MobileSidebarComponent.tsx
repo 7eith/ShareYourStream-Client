@@ -1,11 +1,4 @@
 import { ReactComponent as LogoutICO } from "@/assets/svgs/ico/logout.svg";
-import { ReactComponent as DashboardICO } from "@/assets/svgs/ico/dashboard.svg";
-import { ReactComponent as ProfileICO } from "@/assets/svgs/ico/profile.svg";
-import { ReactComponent as ToolsICO } from "@/assets/svgs/ico/tools.svg";
-import { ReactComponent as ExportICO } from "@/assets/svgs/ico/export.svg";
-
-import { NavLink } from "react-router-dom";
-import Path from "@/routes/paths";
 import { useRef } from "react";
 
 import { useOnClickOutside } from "usehooks-ts";
