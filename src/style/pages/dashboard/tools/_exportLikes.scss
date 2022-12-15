@@ -1,11 +1,101 @@
 .exportLikeToolPage {
-
     display: flex;
-    flex: 1;
-    background-color: var(--cardBackgroundColor);
+    flex-direction: column;
+    flex: 1 1;
 
-    border-radius: 7px;
-    margin: 0px 20px 20px;
+    .typeSelectorContainer {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
 
+        animation: fadeIn;
+        animation-duration: 1s;
+
+        .filterType {
+
+            background-color: #323248;
+            padding: 10px 20px;
+            border-width: 1px;
+            border-color: #9c9ce2;
+            border-style: dashed;
+            border-radius: 0.475rem;
+
+            display: flex;
+            flex: 1;
+            align-items: center;
+
+            margin: 20px 60px;
+
+            cursor: pointer;
+
+            svg {
+                width: 40px;
+
+                g > path {
+                    transition: all ease 1s;
+                    fill: #5c5c76;
+                }
+            }
         
+            .description {
+
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+
+                margin-left: 10px;
+                padding: 15px 10px;
+                border-left: 1px solid #5c5c76;
+                
+                transition: all ease 1s;
+
+                .name {
+                    text-transform: capitalize;
+                    font-family: 'Poppins';
+                    font-size: 17px;
+                    line-height: 20px;
+                }
+                
+                .text {
+                    font-family: 'Inter';
+                    color: #82829f;
+                    font-size: 15px;
+                }
+            }
+
+            transition: all ease 1s;
+
+            &:hover {
+                transition: all ease 1s;
+                background-color: #4d4d6c;
+
+                svg > g > path {
+                    transition: all ease 1s;
+                    fill: #9c9ce2;
+                }
+
+                .description {
+                    transition: all ease 1s;
+
+                    border-left-color: #9c9ce2;
+                }
+            }
+        }
+
+        .active {
+            transition: all ease 1s;
+            background-color: #4d4d6c;
+
+            svg > g > path {
+                transition: all ease 1s;
+                fill: #9c9ce2;
+            }
+
+            .description {
+                transition: all ease 1s;
+
+                border-left-color: #9c9ce2;
+            }
+        }
+    }
 }

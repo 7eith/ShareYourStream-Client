@@ -15,9 +15,6 @@ const CardLoadingComponent = () => {
     )
 }
 
-
-
-
 const ListenedTrack: React.FC<{ playedTimestamp: string, track: TrackObjectFull }> = ({ playedTimestamp, track }) => {
 
     const ref = useRef(null);
@@ -49,8 +46,6 @@ const ListenedTrack: React.FC<{ playedTimestamp: string, track: TrackObjectFull 
 
 const StreamHistoryTable: React.FC<{ items: PlayHistoryObject[] }> = ({ items }) => {
 
-    console.log(items)
-
     return (
         <div className="listenHistory">
             {
@@ -70,7 +65,6 @@ const StreamHistoryTable: React.FC<{ items: PlayHistoryObject[] }> = ({ items })
 const StreamHistoryPage = () => {
 
     const { recentlyPlayedTracks, reload, isError, isLoading } = useRecentlyPlayedTracks();
-    const { spotifyId } = useSelector((state: RootState) => state.user);
 
     return (
         <div className="streamHistoryPage">
@@ -87,7 +81,6 @@ const StreamHistoryPage = () => {
                     </div>
                 </div>
                 <div className="cardContent streamHistoryContainer">
-                    {/* <CardLoadingComponent /> */}
                     {
                         isError ? (
                             <>Oh no, there was an error</>
