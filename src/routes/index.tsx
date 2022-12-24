@@ -23,7 +23,7 @@ import PasswordForgotChangePage from "@/pages/auth/password/PasswordForgotChange
 import SpotifyCallbackPage from "@/pages/auth/oauth/SpotifyCallbackPage";
 import DiscordCallbackPage from "@/pages/auth/oauth/DiscordCallbackPage";
 import ToolsPage from "@/pages/dashboard/tools/ToolsPage";
-import ExportLikesToolPage from "@/pages/dashboard/tools/ExportLikesToolPage";
+import ExportSavedPage from "@/pages/dashboard/tools/exportSaved/ExportSavedPage";
 import ProfileOverview from "@/pages/dashboard/profile/ProfileOverview";
 import DashboardErrorPage from "@/pages/dashboard/utils/DashboardErrorPage";
 import StreamHistoryPage from "@/pages/dashboard/streams/StreamHistoryPage";
@@ -78,14 +78,13 @@ const Router = () => {
                     <Route path={Path.Dashboard.Tools.Root}>
                         <Route index element={<ToolsPage />} />
 
-                        <Route path={Path.Dashboard.Tools.ExportLikes} element={<ExportLikesToolPage />} />
+                        <Route path={Path.Dashboard.Tools.ExportSaved} element={<ExportSavedPage />} />
                     </Route>
 
                     <Route path={Path.Dashboard.Streams.Root}>
                         <Route index element={<ToolsPage />} />
 
                         <Route path={Path.Dashboard.Streams.History} element={<StreamHistoryPage />} />
-                        <Route path={Path.Dashboard.Streams.Charts} element={<ExportLikesToolPage />} />
                     </Route>
 
                     <Route path="*" element={<DashboardErrorPage />} />
