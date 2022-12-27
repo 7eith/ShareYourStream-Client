@@ -7,12 +7,19 @@ import OAuthProvidersComponent from "@/components/auth/oauth/OAuthProvidersCompo
 import { AppDispatch } from "@/index";
 import { loginUsingCredentialsAction } from "@/store/actions/auth/loginUsingCredentialsAction";
 
+
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+
 export enum SignInError { 
     SPOTIFY = "SPOTIFY",
     DISCORD = "DISCORD",
     GOOGLE = "GOOGLE",
     CREDENTIALS = "CREDENTIALS"
   }
+
+const MySwal = withReactContent(Swal)
 
 const SignInPage = () => {
 
@@ -28,6 +35,11 @@ const SignInPage = () => {
         if (location.state && location.state.error) {
             setError(location.state.error as SignInError);
             location.state.error = undefined;
+            MySwal.fire({
+                text: "Sorry, we're unable to Sign In, please try again.",
+                icon: "error",
+                confirmButtonText: "Ok, got it!"
+            })
         }
     }, [location.state])
 
@@ -40,6 +52,11 @@ const SignInPage = () => {
         } 
         catch (err) {
             setError(SignInError.CREDENTIALS)
+            MySwal.fire({
+                text: "Sorry, looks like these credentials are invalid, please try again.",
+                icon: "error",
+                confirmButtonText: "Ok, got it!"
+            })
         }
     }
 
