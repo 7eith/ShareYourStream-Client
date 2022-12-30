@@ -1,7 +1,7 @@
 const PathTranslations = {
     "/": "Home",
     "/app": "Dashboard",
-    "/app/profile": "Profile",
+    "/app/profile/": "Profile",
 
     "/auth/signUp": "Sign Up",
     "/auth/signUp.text": "Already Member ? ",
@@ -17,6 +17,9 @@ const PathTranslations = {
     "/auth/passwordForgot.text": "Not member ? ",
     "/auth/passwordForgot.label": "Sign In",
     "/auth/passwordForgot.link": "/auth/signIn",
+
+    "/app/tools/": "Tools",
+    "/app/tools/exportSaved": "Export Saveds",
 };
   
 export default PathTranslations;

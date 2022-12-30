@@ -1,9 +1,8 @@
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 const PasswordForgotChangePage = () => {
 
-    const { token } = useParams();
-    console.log(token)
+    // const { token } = useParams();
 
     return (
         <div className="passwordForgotChangePage authPageContent">

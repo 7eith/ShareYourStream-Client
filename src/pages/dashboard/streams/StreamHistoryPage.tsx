@@ -1,7 +1,5 @@
 import DashboardBreadcrumbComponent from "@/components/dashboard/layouts/DashboardBreadcrumbComponent";
-import React, { CSSProperties, useRef, useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "@/index";
+import React, { useRef, useState } from "react";
 import { useRecentlyPlayedTracks } from "@/hooks/store/spotify/useRecentlyPlayedTracksHooks";
 import { useOnClickOutside } from "usehooks-ts";
 import LazyLoadedImage from "@/components/global/LazyLoadedImage";
@@ -68,7 +66,7 @@ const StreamHistoryPage = () => {
 
     return (
         <div className="streamHistoryPage">
-            <DashboardBreadcrumbComponent pageTitle={"Stream History"} pagePath={["Listened Song"]} />
+            <DashboardBreadcrumbComponent />
             <div className="dashboardCard">
                 <div className="cardHeader">
                     <div className="cardTitle">Listening History</div>

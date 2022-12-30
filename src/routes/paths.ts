@@ -30,7 +30,7 @@ const Path = {
 
         Tools: {
             Root: "/app/tools",
-            ExportLikes: "/app/tools/exportLikes"
+            ExportSaved: "/app/tools/exportSaved"
         },
 
         Streams: {

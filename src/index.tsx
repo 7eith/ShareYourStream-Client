@@ -1,8 +1,4 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-import App from './app';
-import { BrowserRouter as Router } from "react-router-dom";
 
 import { Provider } from 'react-redux';
 
@@ -10,6 +6,8 @@ import '@/utilities/i18n';
 import '@/style/app.scss';
 
 import store from "./store";
+import { RouterProvider } from "react-router-dom";
+import router from './routes';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,12 +15,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
+    <RouterProvider router={router} />
   </Provider>
 );
 
 export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch

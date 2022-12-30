@@ -1,0 +1,31 @@
+.toolsPage {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1;
+    justify-content: center;
+    align-items: center;
+
+    .tools {
+        height: 420px;
+        width: 280px;
+        background-color: #58587b;
+        border-radius: 15px;
+        padding: 10px;
+        
+
+        .toolCard {
+
+            .toolHeader {
+
+                .title {
+
+                }
+
+                .about {
+
+                }
+
+            }
+        }
+    }
+}

@@ -47,11 +47,11 @@ const SidebarRoutes = () => {
             </NavLink>
             <NavLink
                 className="sidebarRoute"
-                to={Path.Dashboard.Tools.ExportLikes}
+                to={Path.Dashboard.Tools.ExportSaved}
                 end
             >
                 <ExportICO />
-                <div className="routeName">Export Likes</div>
+                <div className="routeName">Export Saved</div>
             </NavLink>
         </div>
     )

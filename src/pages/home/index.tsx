@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-const CheatCode__SignIn = () => {
+const KeyboardHandler = () => {
 
     const code = useSecretCode(["ArrowUp", "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", ]);
     const navigate = useNavigate();
@@ -13,10 +13,9 @@ const CheatCode__SignIn = () => {
         if (code) {
             navigate(Path.Auth.SignIn)
         }
-    }, [code])
+    }, [code, navigate])
     
     return null;
-
 }
 
 const HomePage = () => {
@@ -53,7 +52,7 @@ const HomePage = () => {
                 <h1>Share Your Stream</h1>
                 <p>An enhancer for Spotify & YouTube</p>
             </div>
-            <CheatCode__SignIn />
+            <KeyboardHandler />
         </div>
     )
 }

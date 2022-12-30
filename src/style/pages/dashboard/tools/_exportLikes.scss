@@ -3,6 +3,36 @@
     flex-direction: column;
     flex: 1 1;
 
+    .actionStep {
+
+        animation: fadeIn;
+        animation-duration: 1s;
+        // margin: 5px 25px;
+        // padding: 20px 10px;
+        // background-color: var(--cardBackgroundColor);
+        // border-radius: 5px;
+        // box-shadow: var(--cardShadow);
+
+        .actionTitle {
+            font-size: 18px;
+            font-family: 'Inter';
+            // font-weight: 600;
+            // text-transform: uppercase;
+        }
+
+        .actionContent {
+
+        }
+
+    }
+
+    .disabledStep {
+       input:disabled {
+        background-color: #232336  !important;
+        cursor: default;
+       }
+    }
+
     .typeSelectorContainer {
         display: flex;
         justify-content: space-evenly;
@@ -13,11 +43,8 @@
 
         .filterType {
 
-            background-color: #323248;
+            background-color: #1b1b29;
             padding: 10px 20px;
-            border-width: 1px;
-            border-color: #9c9ce2;
-            border-style: dashed;
             border-radius: 0.475rem;
 
             display: flex;
@@ -98,4 +125,175 @@
             }
         }
     }
+
+    .searchComponent {
+        
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        margin: 5px 25px;
+        padding: 20px 10px;
+        background-color: var(--cardBackgroundColor);
+        border-radius: 5px;
+        box-shadow: var(--cardShadow);
+
+        .searchBarContainer {
+            display: flex;
+            justify-content: space-evenly;
+            flex: 1;
+            flex-wrap: wrap;
+
+
+
+            .searchBarComponent {
+                display: flex;
+                align-items: center;
+                flex: 1;
+
+                width: 70%;
+                padding: 10px 15px;
+
+                background-color: var(--inputBgColor);
+                border-radius: 3px;
+
+
+                svg {
+                    color: #565674;
+                }
+
+                input {
+                    font-size: 1.1rem;
+                    font-family: 'Poppins';
+                    font-weight: 500;
+                    line-height: 1.5;
+                    flex: 1;
+                    margin-left: 5px;
+                    background-color: var(--inputBgColor);
+                    border-color: var(--inputBgColor);
+                    border: 1px solid var(--inputBgColor);
+                    color: var(--lightGreyTextColor);
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &::placeholder {
+                        color: var(--placeholderTextColor);
+                    }
+                }
+
+            }
+
+            .advancedSearchBtn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 1px 15px;
+                padding: 0px 10px;
+                border-radius: 3px;
+                cursor: pointer;
+
+                background-color: #3c3c5e;
+        
+                    transition: ease 0.5s;
+        
+                    &:hover { 
+                        background-color: var(--buttonHoverBgColor);
+                        transition: ease 0.5s;
+                    }
+
+            }
+        }
+
+        .searchResultsComponent {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0px;
+            // padding: 10px 0px;
+
+            overflow-y: auto;
+            max-height: 450px;
+
+            .searchResultLoadingComponent {
+                display: flex;
+                flex-direction: column;
+                padding: 0 5px;
+            }
+
+            .resultElementComponent {
+                
+                display: flex;
+                padding: 5px 5px;
+                margin: 0px 5px;
+
+                border-radius: 7px;
+
+                animation: fadeIn;
+                animation-duration: 1s;
+
+                cursor: pointer;
+            
+                img {
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 5px;
+                }
+
+                .optionName {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    flex: 1;
+                    padding: 0 17px;
+                    font-size: 18px;
+                    font-family: 'Poppins';
+                    color: #c3c5d4;
+                }
+
+                transition: all 0.1s ease;
+                &:hover {
+                    transition: all 0.1s ease;
+                    background-color: #2b2b40;
+
+                    .optionName {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .selectedResourceComponent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        margin: 5px 25px;
+        padding: 20px 10px;
+        background-color: var(--cardBackgroundColor);
+        border-radius: 5px;
+        box-shadow: var(--cardShadow);
+
+        animation: fadeIn;
+        animation-duration: 1s;
+
+        img {
+            width: 64px;
+            height: 64px;
+            border-radius: 5px;
+        }
+
+        
+    }
 }
+
+@keyframes shimmer {
+    0%{
+      background-position: -450px 0;
+    }
+    100%{
+      background-position: 450px 0;
+    }
+  }
