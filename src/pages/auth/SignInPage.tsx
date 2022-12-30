@@ -17,7 +17,7 @@ export enum SignInError {
     DISCORD = "DISCORD",
     GOOGLE = "GOOGLE",
     CREDENTIALS = "CREDENTIALS"
-  }
+}
 
 const MySwal = withReactContent(Swal)
 
@@ -29,12 +29,8 @@ const SignInPage = () => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
 
-    const [ err, setError ] = useState<SignInError | null>(null);
-
     useEffect(() => {
         if (location.state && location.state.error) {
-            setError(location.state.error as SignInError);
-            location.state.error = undefined;
             MySwal.fire({
                 text: "Sorry, we're unable to Sign In, please try again.",
                 icon: "error",
@@ -51,7 +47,6 @@ const SignInPage = () => {
             })).unwrap()
         } 
         catch (err) {
-            setError(SignInError.CREDENTIALS)
             MySwal.fire({
                 text: "Sorry, looks like these credentials are invalid, please try again.",
                 icon: "error",

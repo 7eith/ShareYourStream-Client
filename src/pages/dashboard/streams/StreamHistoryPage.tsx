@@ -66,7 +66,7 @@ const StreamHistoryPage = () => {
 
     return (
         <div className="streamHistoryPage">
-            <DashboardBreadcrumbComponent pageTitle={"Stream History"} pagePath={["Listened Song"]} />
+            <DashboardBreadcrumbComponent />
             <div className="dashboardCard">
                 <div className="cardHeader">
                     <div className="cardTitle">Listening History</div>

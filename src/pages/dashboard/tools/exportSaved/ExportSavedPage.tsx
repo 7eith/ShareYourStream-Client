@@ -34,7 +34,7 @@ const ExportSavedPage = () => {
         spotifyId ? (
             <ExportSavedContextProvider>
                 <div className="exportLikeToolPage">
-                    <DashboardBreadcrumbComponent pageTitle={"Export Likes to Playlist"} pagePath={["Listened Song"]} />
+                    <DashboardBreadcrumbComponent />
                     <div className="actionStep">
                         <div className="typeSelectorContainer actionContent">
                             { SearchFilters.map((searchFilter, index) => <SearchFilterComponent key={index} {...searchFilter} />) }

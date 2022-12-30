@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import ThemeSwitcherButton from "../global/ThemeSwitcherButton";
+import DashboardThemeSwitcherButton from "../dashboard/global/DashboardThemeSwitcherButton";
 
 const AuthentificationFooterComponent = () => {
 
@@ -8,7 +8,7 @@ const AuthentificationFooterComponent = () => {
     return (
         <div className="footer">
             <NavLink to="/" />
-            <ThemeSwitcherButton />
+            <DashboardThemeSwitcherButton />
         </div>
     )
 }
