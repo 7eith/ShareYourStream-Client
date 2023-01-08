@@ -67,11 +67,7 @@ const SearchResultsComponent: React.FC = () => {
     const [isLoading, setLoadingState] = useState<boolean>();
     const { spotifyAccessToken } = useSelector((state: RootState) => state.user);
 
-    console.log(selectedResult)
-
     const searchOnSpotify = () => {
-        console.log(`searching using ${debouncedQuery}`)
-
         let headers = {
             "Authorization": `Bearer ${spotifyAccessToken}`
         }
@@ -92,7 +88,8 @@ const SearchResultsComponent: React.FC = () => {
                     setResults(response.albums.items.map((album) => ({
                         id: album.id,
                         image: album.images.at(-1)?.url, 
-                        text: album.name
+                        text: album.name,
+                        tracks: album.total_tracks
                     })));
                     setLoadingState(false);
                 } else {
@@ -101,7 +98,8 @@ const SearchResultsComponent: React.FC = () => {
                     setResults(response.artists.items.map((artist) => ({
                         id: artist.id,
                         image: artist.images.at(-1)?.url,
-                        text: artist.name
+                        text: artist.name,
+                        followers: artist.followers.total
                     })))
                     setLoadingState(false)
                 }
@@ -133,16 +131,6 @@ const SearchResultsComponent: React.FC = () => {
     )
 }
 
-const SearchResultSelected = () => {
-    const { selectedResult, selectResult } = useContext(ExportSavedContext) as ExportSavedContextType;
-    
-    return (
-        <div className="searchResultSelected">
-            { selectedResult?.text }
-        </div>
-    )
-}
-
 const SearchResultComponent = () => {
     const { selectedResult } = useContext(ExportSavedContext) as ExportSavedContextType;
 
@@ -153,10 +141,11 @@ const SearchResultComponent = () => {
 
 const SearchBarComponent = () => {
 
-    const { query, updateQuery, selectResult } = useContext(ExportSavedContext) as ExportSavedContextType;
+    const { query, updateQuery, selectResult, updateComputingState } = useContext(ExportSavedContext) as ExportSavedContextType;
 
     const handleClick = () => {
         selectResult(null)
+        updateComputingState(undefined);
     }
 
     return (

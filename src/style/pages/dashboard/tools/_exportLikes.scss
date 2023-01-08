@@ -4,7 +4,6 @@
     flex: 1 1;
 
     .actionStep {
-
         animation: fadeIn;
         animation-duration: 1s;
         // margin: 5px 25px;
@@ -15,22 +14,20 @@
 
         .actionTitle {
             font-size: 18px;
-            font-family: 'Inter';
+            font-family: "Inter";
             // font-weight: 600;
             // text-transform: uppercase;
         }
 
         .actionContent {
-
         }
-
     }
 
     .disabledStep {
-       input:disabled {
-        background-color: #232336  !important;
-        cursor: default;
-       }
+        input:disabled {
+            background-color: #232336 !important;
+            cursor: default;
+        }
     }
 
     .typeSelectorContainer {
@@ -42,7 +39,6 @@
         animation-duration: 1s;
 
         .filterType {
-
             background-color: #1b1b29;
             padding: 10px 20px;
             border-radius: 0.475rem;
@@ -63,9 +59,8 @@
                     fill: #5c5c76;
                 }
             }
-        
-            .description {
 
+            .description {
                 display: flex;
                 flex-direction: column;
                 flex: 1;
@@ -73,18 +68,18 @@
                 margin-left: 10px;
                 padding: 15px 10px;
                 border-left: 1px solid #5c5c76;
-                
+
                 transition: all ease 1s;
 
                 .name {
                     text-transform: capitalize;
-                    font-family: 'Poppins';
+                    font-family: "Poppins";
                     font-size: 17px;
                     line-height: 20px;
                 }
-                
+
                 .text {
-                    font-family: 'Inter';
+                    font-family: "Inter";
                     color: #82829f;
                     font-size: 15px;
                 }
@@ -127,8 +122,6 @@
     }
 
     .searchComponent {
-        
-        
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -145,8 +138,6 @@
             flex: 1;
             flex-wrap: wrap;
 
-
-
             .searchBarComponent {
                 display: flex;
                 align-items: center;
@@ -158,14 +149,13 @@
                 background-color: var(--inputBgColor);
                 border-radius: 3px;
 
-
                 svg {
                     color: #565674;
                 }
 
                 input {
                     font-size: 1.1rem;
-                    font-family: 'Poppins';
+                    font-family: "Poppins";
                     font-weight: 500;
                     line-height: 1.5;
                     flex: 1;
@@ -183,7 +173,6 @@
                         color: var(--placeholderTextColor);
                     }
                 }
-
             }
 
             .advancedSearchBtn {
@@ -196,14 +185,13 @@
                 cursor: pointer;
 
                 background-color: #3c3c5e;
-        
-                    transition: ease 0.5s;
-        
-                    &:hover { 
-                        background-color: var(--buttonHoverBgColor);
-                        transition: ease 0.5s;
-                    }
 
+                transition: ease 0.5s;
+
+                &:hover {
+                    background-color: var(--buttonHoverBgColor);
+                    transition: ease 0.5s;
+                }
             }
         }
 
@@ -223,7 +211,6 @@
             }
 
             .resultElementComponent {
-                
                 display: flex;
                 padding: 5px 5px;
                 margin: 0px 5px;
@@ -234,7 +221,7 @@
                 animation-duration: 1s;
 
                 cursor: pointer;
-            
+
                 img {
                     width: 64px;
                     height: 64px;
@@ -248,7 +235,7 @@
                     flex: 1;
                     padding: 0 17px;
                     font-size: 18px;
-                    font-family: 'Poppins';
+                    font-family: "Poppins";
                     color: #c3c5d4;
                 }
 
@@ -280,20 +267,59 @@
         animation-duration: 1s;
 
         img {
-            width: 64px;
-            height: 64px;
+            width: 96px;
+            height: 96px;
             border-radius: 5px;
         }
 
-        
+        .resourceHeader {
+            display: flex;
+
+            .resourceSection {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                padding: 10px 20px;
+
+                .name {
+                    display: flex;
+                    flex: 1;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    .text {
+                        // font-family: "Jost";
+                        font-weight: 600;
+                        font-size: 40px;
+                        margin-right: 5px;
+                    }
+
+                    svg {
+                        cursor: pointer;
+                        color: #6b6b96;
+                        margin: 0 5px;
+
+                        &:hover {
+                            color: #9c9ce2;
+                        }
+                    }
+                }
+            }
+        }
+
+        .resourceActions {
+            margin-top: 20px;
+            border-top: 1px solid #3c3c5e;
+            padding: 20px 10px;
+        }
     }
 }
 
 @keyframes shimmer {
-    0%{
-      background-position: -450px 0;
+    0% {
+        background-position: -450px 0;
     }
-    100%{
-      background-position: 450px 0;
+    100% {
+        background-position: 450px 0;
     }
-  }
+}

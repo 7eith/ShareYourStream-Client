@@ -8,24 +8,28 @@ export type ExportSavedContextType = {
 
     selectedResult: ISearchResult | null;
     selectResult: (_result: ISearchResult | null) => void;
+
+    savedTracks: TrackObjectSimplified[] | undefined;
+    updateSavedTracks: (_tracks: TrackObjectSimplified[]) => void;
+
+    computingState: ExportSavedComputingState | undefined;
+    updateComputingState: (_state: ExportSavedComputingState | undefined) => void;
 };
+
+export type ExportSavedComputingState = "pending" | "computing" | "fulfilled" | "rejected";
 
 export type ISearchResult = {
     id: string | undefined;
     image: string | undefined;
     text: string | undefined;
+
+    followers?: number | undefined;
+    tracks?: number | undefined;
 }
 
 export type ExportSavedSearchFilterType = {
     icon: JSX.Element,
     type: FilterOptions
-};
-
-export type SearchFilterComponentProps = {
-    type: FilterOptions,
-    ico: JSX.Element,
-    active: boolean,
-    handleClick: Dispatch<SetStateAction<FilterOptions | undefined>>
 };
   
 export type ExportSavedFilterOptions = "album" | "artist";

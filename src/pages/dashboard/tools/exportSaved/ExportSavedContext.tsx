@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ExportSavedContextType, ExportSavedFilterOptions, ISearchResult } from '@/types/contexts.type';
+import { ExportSavedComputingState, ExportSavedContextType, ExportSavedFilterOptions, ISearchResult } from '@/types/contexts.type';
 import { FunctionComponent, ReactNode } from "react";
 import { useDebounce } from 'usehooks-ts';
 
@@ -17,6 +17,9 @@ const ExportSavedContextProvider: FunctionComponent<BaseLayoutProps> = ({ childr
     const [searchType, setSearchType] = React.useState<ExportSavedFilterOptions>("artist");
     const [selectedResult, setResult] = React.useState<ISearchResult | null>(null);
 
+    const [savedTracks, setSavedTracks] = React.useState<TrackObjectSimplified[]>();
+    const [computingState, setComputingState] = React.useState<ExportSavedComputingState>();
+
     const updateQuery = (_query: string) => {
         setQuery(_query);
     };
@@ -29,7 +32,17 @@ const ExportSavedContextProvider: FunctionComponent<BaseLayoutProps> = ({ childr
         setResult(_id ? _id : null);
     }
 
-    return <ExportSavedContext.Provider value={{ query, debouncedQuery, updateQuery, searchType, updateSearchType, selectedResult, selectResult }}>
+    const updateSavedTracks = (_tracks: TrackObjectSimplified[]) => { setSavedTracks(_tracks) };
+    const updateComputingState = (_state: ExportSavedComputingState | undefined) => { setComputingState(_state) };
+
+    return <ExportSavedContext.Provider value={{
+        debouncedQuery,
+        query, updateQuery,
+        searchType, updateSearchType,
+        selectedResult, selectResult,
+        computingState, updateComputingState,
+        savedTracks, updateSavedTracks
+    }}>
         {children}
     </ExportSavedContext.Provider>;
 };
