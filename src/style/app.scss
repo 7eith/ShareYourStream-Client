@@ -27,7 +27,10 @@ body {
 @import 'layouts/dashboard/profile';
 
 @import 'pages/landingPage';
-@import 'pages/streamHistoryPage';
+    
+@import 'pages/dashboard/streams/streamHistoryPage';
+@import 'pages/dashboard/streams/streamChartsPage';
+
 @import 'pages/dashboardPage';
 
 @import 'components/global/themeSwitcherComponent';

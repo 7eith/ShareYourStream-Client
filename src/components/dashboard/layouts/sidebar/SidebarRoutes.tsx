@@ -36,6 +36,14 @@ const SidebarRoutes = () => {
                 <HistoryICO />
                 <div className="routeName">History</div>
             </NavLink>
+            <NavLink
+                className="sidebarRoute"
+                to={Path.Dashboard.Streams.Charts}
+                end
+            >
+                <HistoryICO />
+                <div className="routeName">Your tops</div>
+            </NavLink>
             <div className="sidebarGroup">Tools</div>
             <NavLink
                 className="sidebarRoute"

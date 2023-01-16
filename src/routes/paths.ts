@@ -36,7 +36,7 @@ const Path = {
         Streams: {
             Root: "/app/streams",
             History: "/app/streams/history",
-            Charts: "/app/streams/charts"
+            Charts: "/app/streamCharts/:type/:duration"
         }
     },
 
