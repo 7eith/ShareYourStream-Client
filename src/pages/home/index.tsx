@@ -1,8 +1,7 @@
 import { useSecretCode } from "@/hooks/useSecretCode";
 import Path from "@/routes/paths";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { NavLink, useNavigate } from "react-router-dom";
 
 const KeyboardHandler = () => {
 
@@ -18,41 +17,42 @@ const KeyboardHandler = () => {
     return null;
 }
 
-const HomePage = () => {
-
-    const handleMouseMovement = (e: any) => {
-        const el = document.getElementsByClassName("homePage")[0];
-        const d = el!.getBoundingClientRect();
-        let x = e.clientX - (d.left + Math.floor(d.width / 2));
-        let y = e.clientY - (d.top + Math.floor(d.height / 2));
-
-        // Invert values
-        x = x - x * 2;
-        y = y - y * 2;
-        document.documentElement.style.setProperty("--scale", "1.6");
-        document.documentElement.style.setProperty("--x", x / 2 + "px");
-
-        document.documentElement.style.setProperty("--y", y / 2 + "px");
-    };
-
-    const handleMouseLeave = () => {
-        document.documentElement.style.setProperty("--scale", "1");
-        document.documentElement.style.setProperty("--x", "0");
-        document.documentElement.style.setProperty("--y", "0");
-    };
+const HomeBanner = () => {
 
     return (
         <div 
-            className="homePage"
-            onMouseMove={handleMouseMovement}
-            onClick={handleMouseLeave} 
+            className="homeBanner"
+            style={{
+                background: `url('${process.env.PUBLIC_URL}/assets/images/bannerBackground.png')`
+              }}
         >
-            <img className="backgroundImg" alt="" />
-            <div className="title">
-                <h1>Share Your Stream</h1>
-                <p>An enhancer for Spotify & YouTube</p>
+            <div className="bannerHeader">
+                <img 
+                    src={`${process.env.PUBLIC_URL}/assets/images/Logo.png`} 
+                    alt="S" 
+                />
+                <div className="bannerNavbar">
+                    <div className="NavLinks">
+                        <NavLink to="/tools">Tools</NavLink>
+                        <NavLink to="/tools">Features</NavLink>
+                    </div>
+                    <NavLink to={Path.Auth.SignIn} className="componentPrimaryButton">Sign In</NavLink>
+                </div>
             </div>
-            <KeyboardHandler />
+            <div className="bannerTitle">
+                <div className="title">discover a new music experience</div>
+                <div className="subTitle">using our tools to increase your playlists</div>
+            </div>
+        </div>
+    )
+}
+
+const HomePage = () => {
+
+    return (
+        <div className="landingPage">
+            <HomeBanner />
+            s
         </div>
     )
 }

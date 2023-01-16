@@ -1,49 +1,119 @@
-:root {
-    --scale: "1.5";
-    --y: "0";
-    overflow: hidden;
-}
+$navbarLinkColor: #9ba1aa;
 
-.homePage {
-    width: 100vw;
+.landingPage {
+    width: 100%;
     height: 100vh;
-    border: none;
-    
-    .backgroundImg {
-        width: 100vw;
-        height: 100vh;
-        background-image: url("https://images.unsplash.com/photo-1506157786151-b8491531f063?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2550&q=80");
-        background-size: cover;
-        transform: translateX(var(--x)) translateY(var(--y)) scale(var(--scale));
-        transition: ease-out 0.5s;
-    }
 
-    .title {
-        display: flex;
-        position: fixed;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-        left: 0;
-        top: 0;
+    display: flex;
+    flex-direction: column;
+
+    .homeBanner {
         width: 100%;
-        height: 100%;
-        background-image: none !important;
-        -webkit-animation: fade-in 5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        animation: fade-in 5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        background-color: rgba(146, 16, 232, 0.476);
+        height: 100vh;
 
-        color: white;
-        font-family: "Poppins";
+        display: flex;
+        flex-direction: column;
+        
+        .bannerHeader {
+            display: flex;
+            padding: 20px 5%;
 
-        h1 {
-            font-size: 4rem;
-            letter-spacing: 6px;
+            img {
+                width: 72px;
+                height: 100px;
+
+                opacity: .8;
+                cursor: pointer;
+
+                transition: opacity 0.5s;
+
+                &:hover {
+                    transition: opacity 0.5s;
+                    opacity: 1;
+                }
+            }
+
+            .bannerNavbar {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            
+                flex: 1;
+
+                .NavLinks {
+                    padding: 10px;
+                }
+
+                a {
+                    font-family: 'Poppins';
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 36px;
+
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    color: $navbarLinkColor;
+
+                    padding: 10px;
+                    transition: all ease 0.5s;
+
+                    &:hover {
+                        transition: all ease 0.5s;
+                        color: white;
+                    }
+                }
+
+                .componentPrimaryButton {
+                    background: linear-gradient(180deg, rgba(7, 27, 208, 0.42) 0%, rgba(97, 4, 216, 0.42) 100%);
+                    border-radius: 21px;
+                    padding: 10px 43px;
+
+                    color: white;
+
+                    transition: all ease 0.5s;
+
+                    &:hover {
+                        transition: all ease 0.5s;
+                        background: linear-gradient(180deg, rgba(7, 27, 208, 0.52) 0%, rgba(97, 4, 216, 0.52) 100%);
+                    }
+
+                }
+
+
+            }
         }
 
-        p {
-            margin-top: 20px;
+        .bannerTitle {
+            display: flex;
+            flex: 1 1;
+
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+
+            padding: 20px 15%;
+
+            .title {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 600;
+                font-size: 36px;
+
+                text-transform: lowercase;
+            }
+
+            .subTitle {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 500;
+
+                font-size: 20px;
+                line-height: 24px;
+                
+                text-transform: lowercase;
+
+            }
         }
     }
 }
