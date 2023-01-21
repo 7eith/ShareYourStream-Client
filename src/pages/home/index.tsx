@@ -52,7 +52,6 @@ const HomePage = () => {
     return (
         <div className="landingPage">
             <HomeBanner />
-            s
         </div>
     )
 }
