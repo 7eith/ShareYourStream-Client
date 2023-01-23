@@ -3,39 +3,30 @@
     .streamChartRouter {
         
         display: flex;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
         flex: 1;
 
-        .changeDurationBtn {
-
-            background-color: var(--buttonBgColor);
-            padding: 7px;
-            border-radius: 3px;
-
-            line-height: 15px;
-
-            text-decoration: none;
-            color: white;
-
-            .title {
-
-            }
-
-            .label {
-                font-size: 10px;
-            }
-
-            transition: all 0.5s ease;
-
-            &:hover {
-                transition: all 0.5s ease;
-
-                background-color: var(--buttonHoverBgColor);
-            }
-        }
+        padding: 0px 20px;
     }
 
     .spotifyChartsPage {
         
     }
+}
+
+.dashboardPageTitle {
+
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 72px;
+    letter-spacing: 0em;
+    text-align: left;
+
+
+    strong {
+        color: #9599E0;
+        text-transform: capitalize;
+    }
+
 }

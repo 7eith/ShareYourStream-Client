@@ -38,7 +38,7 @@ const SidebarRoutes = () => {
             </NavLink>
             <NavLink
                 className="sidebarRoute"
-                to={Path.Dashboard.Streams.Charts}
+                to={"/app/streamCharts/artist/long"}
                 end
             >
                 <HistoryICO />
