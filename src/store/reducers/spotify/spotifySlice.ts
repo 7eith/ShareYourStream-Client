@@ -45,7 +45,8 @@ export const spotifySlice = createSlice({
     });
 
     builder.addCase(fetchUserStreamingCharts.fulfilled, (state, action) => {
-      state.statusByName['streamingCharts'] = "  ";
+      // state.statusByName['streamingCharts'] = "  ";
+      // TODO: rework the handle of the state 
 
       state.streamingCharts[action.payload.payload.type][action.payload.payload.duration] = action.payload
     });
